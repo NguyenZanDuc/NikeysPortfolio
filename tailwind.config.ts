@@ -10,6 +10,9 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        dribbbleContent: "#FCDE88",
+        dribbbleBackground: "#F8F7F3",
+        dribbbleText:"#0E0C22",
         thePlannerBackground: "#F7F6EB",
         thePlannerContent: "#D9C4C3",
         thePlanner:"#461313",
