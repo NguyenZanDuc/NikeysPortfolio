@@ -10,6 +10,9 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        thePlannerBackground: "#F7F6EB",
+        thePlannerContent: "#D9C4C3",
+        thePlanner:"#461313",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
