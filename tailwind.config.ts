@@ -51,7 +51,6 @@ const config: Config = {
       },
       fontFamily: {
         sans: ["var(--font-sans)", ...fontFamily.sans],
-        mono: ['var(--font-roboto-mono)'],
         inconsolata: ['var(--font-inconsolata-regular)']
       },
       keyframes: {
