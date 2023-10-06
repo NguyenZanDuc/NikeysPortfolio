@@ -1,25 +1,26 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-
+import { AiFillFacebook, AiOutlineTwitter, AiTwotoneStar } from 'react-icons/ai'
+import { FaInstagramSquare } from 'react-icons/fa'
+import {BsPinterest} from 'react-icons/bs'
+import SlideTest from './components/SlideTest'
+import MenberSlide from './components/MemberSlide'
 type Props = {}
 
 const page = (props: Props) => {
   return (
-    <div className='bg-white'>
+    <div className='bg-white overflow-hidden'>
       <Navbar />
       <Hero />
-      {/* Slide image .... */}
+      <MenberSlide />
       <Content />
-      {/* Content */}
-      {/* Find */}
-      {/* Find */}
-      {/* Brand */}
-      {/* Example */}
-      {/* Question */}
-      {/* Start */}
-      {/* More */}
-      {/* Footer */}
+      <InfoJob />
+      <WhyBrand />
+      <TopWork />
+      <Work />
+      <Start />
+      <Footer />
     </div>
   )
 }
@@ -35,7 +36,7 @@ const Logo = () => {
 }
 const Navbar = () => {
   return (
-    <div className='flex px-10 items-center py-4 gap-4'>
+    <div className='flex px-10 items-center py-4 gap-4 bg-dribbbleBackground'>
       <div className=''>
         <Logo />
       </div>
@@ -55,7 +56,7 @@ const Navbar = () => {
 }
 const Hero = () => {
   return (
-    <div className='h-screen w-screen flex flex-col justify-center items-center space-y-10'>
+    <div className='h-screen w-screen flex flex-col justify-center items-center space-y-10 bg-dribbbleBackground'>
       <p className='px-2 py-1 shadow-sm text-xl rounded-full bg-dribbbleContent font-medium '>Over 3 million ready-to-work creatives in our community!</p>
       <p className='text-7xl font-medium w-2/3 mx-auto text-center font-serif'>Hire the world is top creative talent.</p>
       <p className='text-xl font-medium font-sans w-2/3 text-center'>Connect with a community of millions of top-rated designers & agencies around the world.</p>
@@ -84,13 +85,13 @@ const Content = () => {
       <div className='flex'>
         <div className='flex flex-1 flex-col justify-center items-start gap-8'>
           <p className='text-6xl font-light'>Find your perfect creative match</p>
-          <p className='font-sans w-[80%]'>As the world's largest and most far-reaching network of exceptional creative professionals, we are fully equipped to handle your most critical projects with ease.</p>
+          <p className='font-sans w-[80%]'>As the world is largest and most far-reaching network of exceptional creative professionals, we are fully equipped to handle your most critical projects with ease.</p>
           <div className='flex gap-4 p-4'>
             <button className='px-6 py-4 rounded-full text-white bg-black hover:bg-opacity-50'>Find a designer</button>
             <button className='px-6 py-4 rounded-full border hover:bg-gray-300'>Learn about hiring</button>
           </div>
         </div>
-        <div className='flex-1 p-10'>
+        <div className='flex-1 p-10 relative'>
           <Image
             src={'https://cdn.dribbble.com/uploads/47237/original/3bc3456ae9196b404c58c6792b7f800e.jpg?1685987898&resize=1200x1330&vertical=center'}
             alt={''}
@@ -102,94 +103,238 @@ const Content = () => {
               height: "auto",
               objectFit: "cover"
             }} />
+          <div className='absolute bottom-0 right-0'>
+            <CardContent />
+          </div>
         </div>
       </div>
     </div>
   )
 }
+const CardContent = () => {
+  const skills = ['UX', 'UI', 'Illustration', 'Research', 'Branding']
+  return (
+    <div className='h-[250px] w-[240px] rounded-3xl font-sans space-y-3 shadow-md p-4 bg-white'>
+      <div className='flex items-center gap-2'>
+        <Image src={'https://cdn.dribbble.com/uploads/47269/original/c826ca8ddc2198fb5030ef09c0ac1b05.jpg?1685989454&resize=112x112&vertical=center'} alt={''} width={50} height={50} />
+        <div >
+          <p className='text-xl font-medium'>Maya Ealey</p>
+          <p className='font-medium bg-[#DDFDE7]'>Creative Lead</p>
+        </div>
+      </div>
+      <div>
+        <p className='font-bold'>Skills</p>
+        <div className='flex flex-wrap p-2 gap-2 justify-center'>
+          {skills.map((skill, index) => (
+            <SkillItem key={index} title={skill} />
+          ))}
+        </div>
+      </div>
+      <div className='flex justify-between items-center'>
+        <p className='font-bold'>$180/hr</p>
+        <div className='flex items-center gap-1'>
+          <AiTwotoneStar />
+          <AiTwotoneStar />
+          <AiTwotoneStar />
+          <AiTwotoneStar />
+          <AiTwotoneStar />
+        </div>
+      </div>
+    </div>
+  )
+}
+type SkillItemProps = {
+  title: string
+}
+const SkillItem = ({ title }: SkillItemProps) => {
+  return (
+    <p className='px-2 py-1 text-sm rounded-full font-medium border border-gray-300'>{title}</p>
+  )
+}
+const InfoJob = () => {
+  return (
+    <div className='p-24 space-y-16 ' >
+      <p className='text-5xl w-1/3 '>A better way to hire designers</p>
+      <div className='grid grid-cols-3 gap-10'>
+        <div>
+          <p className='font-bold pb-4'>The #1 job board for design talent</p>
+          <p>Get your job listings in front of millions of top-rated designers looking for their next role with an average of 1.1K targeted clicks per month.</p>
+        </div>
+        <div>
+          <p className='font-bold pb-4'>Seamless designer search filters</p>
+          <p>No more sifting through piles of resumes. Our advanced search & filtering options make it easy to find the right designer in just a few clicks.</p>
+        </div>
+        <div>
+          <p className='font-bold pb-4'>Top-quality candidates</p>
+          <p>Your brand deserves only the best. Engage with leading designers and save your favorite candidates for future projects all in one place.</p>
+        </div>
+      </div>
+      {/*  */}
+      <div className='p-14 flex gap-5 group'>
+        <div className='flex-1 p-10 space-y-5 rounded-xl border-[0.5px] border-gray-300'>
+          <p className='text-3xl font-medium'>“Dribbble is my go-to for hiring designers. It always provides a wealth of quality candidates and instantly builds my pipeline.”</p>
+          <div className='flex items-center gap-4'>
+            <Image src={'https://cdn.dribbble.com/uploads/47401/original/0bbab93269310c5391b5da608c718a40.jpg?1686152330&resize=80x80&vertical=center'} alt={''} width={36} height={36} />
+            <p className='text-xl'>Lee Munroe - <span className='text-gray-500 font-thin'>Head of design, OneSignal</span></p>
+          </div>
+        </div>
+        <div className='flex justify-center items-center rounded-xl w-[270px] bg-gradient-to-tr from-pink-400 to-rose-100'>
+          <svg className='group-hover:scale-110 duration-200 group-hover:rotate-3' xmlns="http://www.w3.org/2000/svg" width="118" height="107" viewBox="0 0 118 107" fill="none" role="img" >
+            <path fillRule="evenodd" clipRule="evenodd" d="M79.4324 35.9118C79.4324 44.7635 73.7328 52.2875 65.8109 55.0925V57.1618C74.8361 54.2868 81.3784 45.868 81.3784 35.9118C81.3784 23.5833 71.3588 13.5882 59 13.5882C46.6414 13.5882 36.6216 23.5833 36.6216 35.9118C36.6216 46.5708 44.1194 55.4613 54.1351 57.6781V55.6788C45.2149 53.4948 38.5676 45.4758 38.5676 35.9118C38.5676 24.6723 47.733 15.5294 59 15.5294C70.267 15.5294 79.4324 24.6723 79.4324 35.9118ZM48.2974 35.9118C48.2974 30.0242 53.098 25.2354 59.0002 25.2354C64.9022 25.2354 69.7028 30.0242 69.7028 35.9118C69.7028 39.2118 68.1772 42.143 65.8109 44.1017V46.5165C69.3137 44.2745 71.6488 40.3727 71.6488 35.9118C71.6488 28.943 65.986 23.2942 59.0002 23.2942C52.0142 23.2942 46.3514 28.943 46.3514 35.9118C46.3514 41.1569 49.5682 45.641 54.1353 47.5415V45.3828C50.6812 43.6125 48.2974 40.0465 48.2974 35.9118ZM39.3829 66C29.5267 59.5922 23 48.5216 23 35.9118C23 16.0788 39.1183 0 59 0C78.8817 0 95 16.0788 95 35.9118C95 48.5216 88.4734 59.5922 78.6131 65.998C74.2581 63.1658 69.2512 61.2693 63.8649 60.518V57.6898V55.6865V47.5588V45.41V34.9412H61.9189H56.0811H54.1351V38.8235H56.0811V46.1748V48.178V56.0612V58.0237V60.324C55.6276 60.3603 55.1797 60.4086 54.7329 60.4567C54.5335 60.4782 54.3344 60.4997 54.1351 60.52C53.5591 60.5997 52.989 60.6986 52.4208 60.8035C51.8856 60.9025 51.3583 61.017 50.8329 61.1393C50.3134 61.2596 49.7995 61.3935 49.2897 61.5353C48.6106 61.7255 47.9411 61.9332 47.2815 62.1603C46.8086 62.3235 46.3416 62.4923 45.8785 62.6728C45.3084 62.896 44.7479 63.129 44.1934 63.3795C43.6368 63.6298 43.088 63.8938 42.547 64.1715C42.0936 64.4043 41.648 64.643 41.2063 64.8935C40.5894 65.2468 39.9784 65.6118 39.3829 66ZM9.03824 101.681C3.99034 101.681 0.556641 97.8883 0.556641 92.8404C0.556641 87.7924 3.99034 84 9.03824 84C14.0862 84 17.5454 87.7924 17.5454 92.8404C17.5454 97.8883 14.0862 101.681 9.03824 101.681ZM9.03834 99.7844C12.8563 99.7844 15.3418 96.812 15.3418 92.8403C15.3418 88.8429 12.8563 85.8961 9.03834 85.8961C5.19464 85.8961 2.76034 88.8429 2.76034 92.8403C2.76034 96.812 5.19464 99.7844 9.03834 99.7844ZM30.467 101.373V92.6867C30.467 89.9962 29.1089 88.6894 26.5465 88.6894C24.6759 88.6894 22.9847 89.7399 22.1135 90.7905V88.9968H20.1917V101.373H22.1135V92.328C22.8566 91.3286 24.2659 90.4062 25.7778 90.4062C27.4433 90.4062 28.5708 91.0724 28.5708 93.2761V101.373H30.467ZM39.3656 101.681C35.6757 101.681 33.0364 99.0415 33.0364 95.1723C33.0364 91.5849 35.5988 88.6894 39.1349 88.6894C42.8761 88.6894 45.0797 91.6105 45.0797 95.326V95.8129H35.0863C35.2401 98.1447 36.8544 100.092 39.5193 100.092C40.9543 100.092 42.3636 99.5284 43.3629 98.5034L44.2854 99.759C43.0298 100.989 41.3642 101.681 39.3656 101.681ZM43.1836 94.3778C43.1579 92.5585 41.928 90.2779 39.1093 90.2779C36.47 90.2779 35.1632 92.5072 35.0607 94.3778H43.1836ZM56.0989 101.681C60.6859 101.681 62.7099 99.2208 62.7099 96.3765C62.7099 92.6602 59.3097 91.792 56.4863 91.071C54.4817 90.5592 52.7679 90.1216 52.7679 88.7917C52.7679 87.5362 53.8959 86.6649 55.6379 86.6649C57.4319 86.6649 59.2509 87.2799 60.6089 88.638L62.2999 86.4087C60.7369 84.8712 58.5589 84 55.9199 84C52.1529 84 49.6929 86.1781 49.6929 89.0224C49.6929 92.5977 52.9174 93.4138 55.6937 94.1165C57.7923 94.6477 59.6349 95.114 59.6349 96.6584C59.6349 97.8114 58.6869 99.0158 56.2269 99.0158C53.8439 99.0158 51.9739 97.8883 50.8209 96.6327L49.1289 98.9645C50.6669 100.553 52.9469 101.681 56.0989 101.681ZM66.7329 87.485C67.6559 87.485 68.3989 86.7419 68.3989 85.8194C68.3989 84.8969 67.6559 84.1538 66.7329 84.1538C65.8109 84.1538 65.0679 84.8969 65.0679 85.8194C65.0679 86.7419 65.8109 87.485 66.7329 87.485ZM68.0659 101.373V88.9967H65.3749V101.373H68.0659ZM76.5979 106.396C74.4969 106.396 72.9339 105.934 71.3969 104.551L72.6519 102.603C73.6769 103.756 74.9589 104.192 76.5979 104.192C78.3669 104.192 80.2629 103.372 80.2629 100.733V99.3234C79.3149 100.579 77.9049 101.399 76.2909 101.399C73.1389 101.399 70.8069 99.1184 70.8069 95.0441C70.8069 91.0212 73.0879 88.6894 76.2909 88.6894C77.8539 88.6894 79.2629 89.3812 80.2629 90.7137V88.9968H82.9529V100.733C82.9529 105.191 79.6219 106.396 76.5979 106.396ZM77.0849 98.9902C78.3409 98.9902 79.6479 98.2471 80.2629 97.3502V92.7123C79.6479 91.8154 78.3409 91.0723 77.0849 91.0723C74.9329 91.0723 73.5749 92.661 73.5749 95.0441C73.5749 97.4271 74.9329 98.9902 77.0849 98.9902ZM97.5079 101.373V92.6611C97.5079 90.1243 96.1749 88.6894 93.5099 88.6894C91.5629 88.6894 89.9489 89.6887 89.1289 90.6624V88.9968H86.4379V101.373H89.1289V92.7123C89.7689 91.8924 90.9479 91.0724 92.3059 91.0724C93.8179 91.0724 94.8169 91.6874 94.8169 93.6348V101.373H97.5079ZM111.268 101.373H108.577V100.015C107.655 101.091 106.194 101.681 104.554 101.681C102.556 101.681 100.275 100.297 100.275 97.5809C100.275 94.711 102.53 93.5323 104.554 93.5323C106.246 93.5323 107.655 94.0704 108.577 95.121V93.2761C108.577 91.8411 107.373 90.9699 105.682 90.9699C104.298 90.9699 103.068 91.4824 102.018 92.5586L100.89 90.688C102.325 89.3043 104.119 88.6894 106.092 88.6894C108.859 88.6894 111.268 89.8424 111.268 93.148V101.373ZM105.631 99.8357C106.784 99.8357 107.937 99.4001 108.577 98.5545V96.6583C107.937 95.8127 106.784 95.3771 105.631 95.3771C104.119 95.3771 102.966 96.2739 102.966 97.6064C102.966 98.9645 104.119 99.8357 105.631 99.8357ZM117.443 101.373V84.2818H114.753V101.373H117.443Z" fill="#fff"></path>
+          </svg>
+        </div>
+      </div>
+    </div>
+  )
+}
+const WhyBrand = () => {
+  return (
+    <div className='w-screen'>
+      <p className='text-center w-2/3 mx-auto text-6xl font-sans'>Why brands choose Dribbble to hire design talent</p>
+      <div className='flex gap-10 p-24'>
+        <div className='flex-1 space-y-10 text-lg'>
+          {/* items */}
+          <div >
+            {/* icon */}
+            <p className='font-semibold p-1 mb-3 inline bg-[#E6FAFD]'>World-class talent</p>
+            <p className='w-3/4'>From graphic design to UX/UI, our community is home to the world is leading designers and creative agencies.</p>
+          </div>
+          <div>
+            {/* icon */}
+            <p className='font-semibold p-1 mb-3  inline bg-[#E2EBFC]'>$0 placement fees</p>
+            <p className='w-3/4'>We make the hiring process as seamless and cost-effective as possible, so you can focus on building your business.</p>
+          </div>
+          <div>
+            {/* icon */}
+            <p className='font-semibold p-1 mb-3  inline bg-[#ECDDFB]'>Global reach</p>
+            <p className='w-3/4'>With a network of designers spanning over 170 countries, we make it easy to find world-class talent, wherever you are in the world.</p>
+          </div>
+        </div>
+        <div className='flex-1'>
+          <Image src={'https://cdn.dribbble.com/uploads/47302/original/11a557ca1a5c49c9bcd89a22f781d953.jpg?1686080350&resize=1254x1002&vertical=center'} alt={''} width={630} height={500} style={{ width: "100%", height: "auto", borderRadius: 20 }} />
+        </div>
+      </div>
+    </div>
+  )
+}
+const TopWork = () => {
+  return (
+    <div className='flex w-screen flex-col items-center overflow-hidden'>
+      <p className='p-16 text-5xl font-serif w-full'>Plus, top quality work</p>
+      <div className='flex flex-wrap justify-center w-[2000px] gap-6'>
+        <CardTopWork image={'https://cdn.dribbble.com/uploads/47373/original/0634279dac13fff2153e022355de7cf1.jpg?1686148239&resize=720x540&vertical=center'} />
+        <CardTopWork video={'https://cdn.dribbble.com/uploads/47369/original/36860a753e16c024895745abaf6c158a.mp4?1686147978'} />
+        <CardTopWork image={'https://cdn.dribbble.com/uploads/47376/original/43ade6e2ebb22a827b28f8954b4482ed.jpg?1686148450&resize=720x540&vertical=center'} />
+        <CardTopWork video={'https://cdn.dribbble.com/uploads/47368/original/356aa0635642ba835e6c9a5266609f06.mp4?1686147933'} />
+        <CardTopWork image={'https://cdn.dribbble.com/uploads/47374/original/54fbc96badf2dd56aeff1d055d1d3479.jpg?1686148303&resize=720x540&vertical=center'} />
+        <CardTopWork video={'https://cdn.dribbble.com/uploads/47371/original/6e3ff9324887e3d134065d73d77539f1.mp4?1686148028'} />
+        <CardTopWork image={'https://cdn.dribbble.com/uploads/47377/original/4aa6c2bb1ce8297cb649afcd4a532e34.jpg?1686148479&resize=720x540&vertical=center'} />
+        <CardTopWork video={'https://cdn.dribbble.com/userupload/10349461/file/large-1bf077f2d77bc0a505d6ace3a88db823.mp4'} />
+        <CardTopWork image={'https://cdn.dribbble.com/uploads/47372/original/cd929a56af76f436c8759841407a6e48.jpg?1686148209&resize=720x540&vertical=center'} />
+      </div>
+    </div>
+  )
+}
+const CardTopWork = ({ image, video }: { image?: string, video?: string }) => {
+  return (
+    <div className='w-[360px] h-[270px] rounded-xl overflow-hidden'>
+      {image && <Image src={image} alt={''} width={360} height={270} />}
+      {video && <video src={video} autoPlay loop muted className='w-full h-full object-cover' />}
+    </div>
+  )
+}
+const Work = () => {
+  return (
+    <div className='w-screen h-screen p-24 flex justify-center items-center gap-10'>
+      <div className='flex-1 rounded-3xl p-10 bg-dribbbleBackground space-y-10'>
+        <p className='p-3 rounded-full inline font-semibold bg-[#B2FBE3]'>Looking for work?</p>
+        <p className='text-5xl font-serif'>Find your next opportunity</p>
+        <p className='text-lg'>Browse new design jobs or boost your portfolio to get discovered.</p>
+        <div className='space-x-4'>
+          <button className='p-4 rounded-full text-sm font-bold text-white bg-black hover:bg-opacity-70'>Find work</button>
+          <button className='p-4 rounded-full text-sm font-bold text-black bg-white hover:bg-gray-300'>Get discovered</button>
+        </div>
+      </div>
+      <div className='flex-1 rounded-3xl p-10 bg-dribbbleBackground space-y-10'>
+        <p className='p-3 rounded-full inline font-semibold bg-[#FFABE7]'>Here for inspiration?</p>
+        <p className='text-5xl font-serif'>Discover trending designs</p>
+        <p className='text-lg'>Browse and save your favorite design projects for endless inspiration..</p>
+        <div className='space-x-4'>
+          <button className='p-4 rounded-full text-sm font-bold text-white bg-black hover:bg-opacity-70'>Create my profile</button>
+          <button className='p-4 rounded-full text-sm font-bold text-black bg-white hover:bg-gray-300'>Browse designs</button>
+        </div>
+      </div>
+    </div>
+  )
+}
+const Start = () => {
+  return (
+    <div className='w-screen p-24 flex flex-col bg-dribbbleContent justify-center items-center gap-10'>
+      <p className='text-6xl font-serif '>Start hiring today</p>
+      <p className='text-xl'>Browse portfolios and engage with top creative talent today.</p>
+      <div className='flex justify-center gap-6'>
+        <button className='p-4 rounded-full text-sm font-bold text-white bg-black hover:bg-opacity-70'>Get started now</button>
+        <button className='p-4 rounded-full text-sm font-bold text-black bg-white hover:bg-gray-300'>Learn about hiring</button>
+      </div>
+      <p className='text-xl text-center'>
+        Are you a designer?
+        <span className='underline'>Join Dribbble</span>
+      </p>
+    </div>
+  )
+}
+const Footer = () => {
+  return (
+    <div className='px-24 py-10 space-y-10'>
+      <div className='flex items-center gap-10 font-semibold '>
+        <Logo />
+        <div className='flex  flex-1 justify-around  items-center'>
+          <Link href={"#"} >For designers</Link>
+          <Link href={"#"} >Hire talent</Link>
+          <Link href={"#"} >Inspiration</Link>
+          <Link href={"#"} >Advertising</Link>
+          <Link href={"#"} >Blog</Link>
+          <Link href={"#"} >About</Link>
+          <Link href={"#"} >Careers</Link>
+          <Link href={"#"} >Support</Link>
+        </div>
+        <div className='flex justify-center items-center gap-2 '>
+          <AiFillFacebook/>
+          <FaInstagramSquare/>
+          <AiOutlineTwitter />
+          <BsPinterest />
+        </div>
+      </div>
+      <div className='flex justify-between  text-gray-500'>
+        <div className='flex gap-4'>
+          <p>© 2023 Dribbble</p>
+          <p>Terms</p>
+          <p>Privacy</p>
+          <p>Cookies</p>
+        </div>
+        <div className='flex gap-4'>
+          <p>Jobs</p>
+          <p>Designers</p>
+          <p>Freelancers</p>
+          <p>Tags</p>
+          <p>Places</p>
+          <p>Resources</p>
+        </div>
+      </div>
+    </div>
+  )
+} 
 
 
 
 
-
-//Find a designer
-// Learn about hiring
-
-// Maya Ealey
-// Creative Lead
-// Skills
-// UX
-// UI
-// Illustration
-// Research
-// Branding
-// $180/hr
-
-// A better way to hire designers
-// The #1 job board for design talent
-// Get your job listings in front of millions of top-rated designers looking for their next role with an average of 1.1K targeted clicks per month.
-// Seamless designer search filters
-// No more sifting through piles of resumes. Our advanced search & filtering options make it easy to find the right designer in just a few clicks.
-// Top-quality candidates
-// Your brand deserves only the best. Engage with leading designers and save your favorite candidates for future projects – all in one place.
-
-// “Dribbble is my go-to for hiring designers. It always provides a wealth of quality candidates and instantly builds my pipeline.”
-// Lee Munroe
-// Lee Munroe —
-// Head of design, OneSignal
-
-//Why brands choose Dribbble to hire design talent
-
-// World-class talent
-// From graphic design to UX/UI, our community is home to the world’s leading designers and creative agencies.
-// $0 placement fees
-// We make the hiring process as seamless and cost-effective as possible, so you can focus on building your business.
-// Global reach
-// With a network of designers spanning over 170 countries, we make it easy to find world-class talent, wherever you are in the world.
-// World-class talent
-
-
-// Plus, top quality work
-
-// Looking for work?
-
-// Find your next opportunity
-// Browse new design jobs or boost your portfolio to get discovered.
-
-// Find work
-// Get discovered
-
-// Here for inspiration?
-
-// Discover trending designs
-// Browse and save your favorite design projects for endless inspiration.
-
-// Create my profile
-// Browse designs
-
-// Start hiring today
-// Browse portfolios and engage with top creative talent today.
-// Get started now
-// Learn about hiring
-// Are you a designer? Join Dribbble
-
-
-// For designers
-// Hire talent
-// Inspiration
-// Advertising
-// Blog
-// About
-// Careers
-// Support
-
-// '© 2023 Dribbble
-// Terms
-// Privacy
-// Cookies
-// Jobs
-// Designers
-// Freelancers
-// Tags
-// Places
-// Resources'
+// '
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// '
