@@ -36,7 +36,7 @@ const Logo = () => {
 }
 const Navbar = () => {
   return (
-    <div className='flex border-b-2  md:px-10 justify-between px-4 items-center py-4 gap-4 bg-dribbbleBackground'>
+    <div className='flex border-b-2  md:px-10 justify-between px-4 items-center gap-4 bg-dribbbleBackground'>
       <div className=''>
         <Logo />
       </div>
@@ -71,16 +71,16 @@ const Content = () => {
   return (
     <div className='md:bg-white bg-dribbbleBackground'>
       {/* First section */}
-      <div className='flex md:px-20  p-4 shadow-sm md:gap-10 gap-4 md:flex-row flex-col  '>
-        <p className='md:px-10 flex-1 md:text-7xl text-xl font-serif'>When only the best talent will do</p>
-        <div className='md:space-y-10 flex flex-col justify-center space-y-4 flex-1'>
+      <div className='flex md:px-20 md:h-[600px] shadow-black md:items-center  p-4 shadow-sm md:gap-10 gap-4 md:flex-row flex-col  '>
+        <p className='md:px-10 flex-1 md:text-8xl font-thin text-xl font-serif'>When only the best talent will do</p>
+        <div className='md:space-y-10 md:inline flex flex-col justify-center space-y-4 flex-1'>
           <p className='md:text-2xl '>From Ford to Airbnb to Capital One, see why over 60,000 leading brands and business builders use Dribbble to attract, engage, and hire their best design talent.</p>
-          <button className='md:p-3  w-2/3 mx-auto  p-1 md:font-bold md:rounded-full rounded-lg bg-black text-white hover:bg-opacity-60'>Get started</button>
+          <button className='md:p-3  md:w-auto w-2/3 mx-auto md:mx-0  p-1 md:font-bold md:rounded-full rounded-lg bg-black text-white hover:bg-opacity-60'>Get started</button>
         </div>
       </div>
       {/* Secon section */}
       <div className='w-full md:px-20  p-4 bg-white  flex flex-col justify-center items-center space-y-4 md:space-y-10'>
-        <p className='px-3 py-1 shadow-sm md:text-xl text-center text-sm rounded-full bg-dribbbleContent font-medium w-2/3  '> Trusted by top brands & businesses</p>
+        <p className='px-3 py-1 shadow-sm md:text-xl text-center text-sm rounded-full bg-dribbbleContent font-medium md:w-auto w-2/3  '> Trusted by top brands & businesses</p>
         <p className='md:text-7xl font-medium w-2/3 mx-auto text-center font-serif'>Connecting brands and business builders with the world is top designers</p>
         <p className='md:text-xl text-sm font-medium font-sans w-2/3 text-center'>The world is leading brands use Dribbble to hire creative talent. Browse millions of top-rated portfolios to find your perfect creative match.</p>
       </div>
