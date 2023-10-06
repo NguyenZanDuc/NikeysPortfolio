@@ -245,17 +245,17 @@ const CardTopWork = ({ image, video }: { image?: string, video?: string }) => {
 }
 const Work = () => {
   return (
-    <div className='w-screen h-screen p-24 flex justify-center items-center gap-10'>
-      <div className='flex-1 rounded-3xl p-10 bg-dribbbleBackground space-y-10'>
+    <div className='w-screen h-[600px] p-24 flex justify-center  gap-10'>
+      <div className='flex-1 h-full rounded-3xl p-10 bg-dribbbleBackground space-y-10'>
         <p className='p-3 rounded-full inline font-semibold bg-[#B2FBE3]'>Looking for work?</p>
         <p className='text-5xl font-serif'>Find your next opportunity</p>
         <p className='text-lg'>Browse new design jobs or boost your portfolio to get discovered.</p>
-        <div className='space-x-4'>
+        <div className='space-x-4  '>
           <button className='p-4 rounded-full text-sm font-bold text-white bg-black hover:bg-opacity-70'>Find work</button>
           <button className='p-4 rounded-full text-sm font-bold text-black bg-white hover:bg-gray-300'>Get discovered</button>
         </div>
       </div>
-      <div className='flex-1 rounded-3xl p-10 bg-dribbbleBackground space-y-10'>
+      <div className='flex-1 h-full rounded-3xl p-10 bg-dribbbleBackground space-y-10'>
         <p className='p-3 rounded-full inline font-semibold bg-[#FFABE7]'>Here for inspiration?</p>
         <p className='text-5xl font-serif'>Discover trending designs</p>
         <p className='text-lg'>Browse and save your favorite design projects for endless inspiration..</p>

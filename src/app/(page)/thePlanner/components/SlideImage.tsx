@@ -6,12 +6,9 @@ import 'react-slideshow-image/dist/styles.css';
 import { GrFormPrevious, GrFormNext } from 'react-icons/gr';
 
 const SlideImage = () => {
-
-   
-    
     const properties = {
-        prevArrow: <GrFormPrevious className="w-14 h-14  rounded-full bg-slate-200 bg-opacity-20" />,
-        nextArrow: <GrFormNext className="w-14 h-14  rounded-full bg-slate-200 bg-opacity-20"/>,
+        prevArrow: <GrFormPrevious className="md:w-12 md:h-12 w-4 h-4 rounded-full bg-slate-200 bg-opacity-20" />,
+        nextArrow: <GrFormNext className="md:w-12 md:h-12 w-4 h-4 rounded-full bg-slate-200 bg-opacity-20"/>,
         indicators: true,
     }
     const images = [
