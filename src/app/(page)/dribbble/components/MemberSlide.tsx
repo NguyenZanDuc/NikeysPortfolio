@@ -65,7 +65,7 @@ const MenberSlide = (props: Props) => {
     return (
         <motion.div
             animate={{ x: [0, -1700], transition: { duration: 50, repeat: Infinity, repeatType: 'reverse' } }}
-            className='flex w-auto gap-10 p-10'
+            className='flex w-auto  gap-10 p-10'
         >
             {cards.map((menber, i) => (<Card key={i} name={menber.name} position={menber.position} image={menber.image}  />))}
         </motion.div>
@@ -78,7 +78,7 @@ export default MenberSlide
 
 const Card = ({ name, position, image, video }: Menber) => {
     return (
-        <div className='min-w-[280px] relative inline-grid h-[360px] overflow-hidden bg-white rounded-xl shadow-xl'>
+        <div className='min-w-[280px] hover:-translate-y-3 duration-300 relative inline-grid h-[360px] overflow-hidden bg-white rounded-xl shadow-xl'>
             {image&&<Image alt={name} src={image} width={280} height={360} className='drop-shadow-md' style={{width:"100%",height:"100%"}} />}
             {video && <video src={video} autoPlay loop muted className='w-full h-full object-cover' />}
             <div className='absolute bottom-4 left-4 text-gray-900 font-semibold text-sm'>
