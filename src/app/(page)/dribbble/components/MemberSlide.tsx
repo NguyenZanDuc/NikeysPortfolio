@@ -1,5 +1,5 @@
 "use client"
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 
@@ -50,22 +50,29 @@ const cards: Menber[] = [{
     image: "https://i.pinimg.com/474x/28/ab/ca/28abca6314ed4b4383d352306f325fc9.jpg"
 },
 {
-    name: "Alex Smith",
+    name: "Alex befor end",
     position: "Digital Designer",
     image: "https://i.pinimg.com/474x/1a/fb/4b/1afb4b2f9d07e72e05353d719fa4e167.jpg"
 },
 {
-    name: "Alex Smith",
+    name: "Alex end",
     position: "Digital Designer",
     image: " https://cdn.dribbble.com/uploads/47172/original/d85ae8c7db2421e9a01ecac942978d4b.png?1685645079&format=webp&resize=1200x1495&vertical=center 1200w"
 }
 ]
 const MenberSlide = (props: Props) => {
-
+    const ref = useRef<HTMLDivElement>(null);
+    const [width, setWidth] = useState(0);
+    useEffect(() => {
+      if (ref.current) {
+        setWidth(ref.current.getBoundingClientRect().width);
+      }
+    }, []);
     return (
         <motion.div
-            animate={{ x: [0, -1700], transition: { duration: 50, repeat: Infinity, repeatType: 'reverse' } }}
-            className='flex w-auto  gap-10 p-10'
+            ref={ref}
+            animate={{ x: [0, -width], transition: { duration: 50, repeat: Infinity, repeatType: 'reverse' } }}
+            className='flex w-auto'
         >
             {cards.map((menber, i) => (<Card key={i} name={menber.name} position={menber.position} image={menber.image}  />))}
         </motion.div>
@@ -78,7 +85,7 @@ export default MenberSlide
 
 const Card = ({ name, position, image, video }: Menber) => {
     return (
-        <div className='min-w-[280px] hover:-translate-y-3 duration-300 relative inline-grid h-[360px] overflow-hidden bg-white rounded-xl shadow-xl'>
+        <div className='min-w-[280px] m-5 hover:-translate-y-3 duration-300 relative inline-grid h-[360px] overflow-hidden bg-white rounded-xl shadow-xl'>
             {image&&<Image alt={name} src={image} width={280} height={360} className='drop-shadow-md' style={{width:"100%",height:"100%"}} />}
             {video && <video src={video} autoPlay loop muted className='w-full h-full object-cover' />}
             <div className='absolute bottom-4 left-4 text-gray-900 font-semibold text-sm'>

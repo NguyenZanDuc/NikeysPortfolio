@@ -2,7 +2,6 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import SlideImage from './components/SlideImage'
-import { cn } from '@/app/lib/utils'
 import SlideCommnet from './components/SlideCommennt'
 import { AiOutlineArrowRight } from 'react-icons/ai'
 import { NavBar } from './components/NavBar'
@@ -12,7 +11,7 @@ type Props = {}
 
 const page = (props: Props) => {
     return (
-        <div className='w-full bg-slate-50'>
+        <div className='w-full bg-slate-50 scroll-smooth'>
             <NavBar />
             <Hero />
             <Service />
@@ -103,7 +102,7 @@ const Contact = () => {
 
 const Footer = () => {
     return (
-        <div className='w-screen flex md:px-14 px-4  md:py-10 py-4 justify-between mt-64 text-sm bg-thePlannerBackground'>
+        <div id='footer' className='w-screen flex md:px-14 px-4  md:py-10 py-4 justify-between mt-64 text-sm bg-thePlannerBackground'>
             <Link className='' href="/" >
                 <Image src="/mainlogo-tp-01.svg" alt="logo" width={200} height={200} />
             </Link>
