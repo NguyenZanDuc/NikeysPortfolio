@@ -17,8 +17,8 @@ const GroupLink = (props: Props) => {
             {
                 duration: 4,
                 repeat: Infinity,
-                repeatDelay: 0.5,
-                delay: stagger(0.5)
+                repeatDelay: 1,
+                delay: stagger(1)
             })
     }, [animate])
 
@@ -32,6 +32,12 @@ const GroupLink = (props: Props) => {
             </div>
             <div className='link py-1 px-2 absolute top-1/4 bg-pink-200 right-1/4 rounded-md shadow-lg'>
                 <Link href='/10xdesigners'>10xDesigners</Link>
+            </div>
+            <div className='link py-1 px-2 absolute bottom-1/4 bg-blue-200 left-64 rounded-md shadow-lg'>
+                <Link href='/product'>product</Link>
+            </div>
+            <div className='link py-1 px-2 absolute bottom-1/4 bg-blue-200 left-1/2 rounded-md shadow-lg'>
+                <Link href='/Consuly'>Consuly</Link>
             </div>
         </div>
     )

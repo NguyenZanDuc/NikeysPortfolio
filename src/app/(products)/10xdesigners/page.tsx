@@ -1,6 +1,8 @@
+
 import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
+import React, { use, useEffect, useRef } from 'react'
+import ChipMotion from './components/ChipMotion'
 
 type Props = {}
 
@@ -14,8 +16,8 @@ const page = (props: Props) => {
             <TryLesson />
             <Become />
             <More />
-            <Comments />  
-            <BecomeMember /> 
+            <Comments />
+            <BecomeMember />
             <Pricing />
             <Footer />
         </div>
@@ -26,31 +28,47 @@ export default page
 
 const Navbar = () => {
     return (
-        <div className='font-medium py-4 text-xl flex justify-between items-center px-32'>
-            <div className='flex gap-2 items-center'>
+        <div className=' font-medium py-4 text-xl flex justify-center items-center px-32'>
+            <div className='flex gap-2 items-center basis-1/6'>
                 <p className='text-2xl p-2 rounded-md bg-black font-bold text-white'>10x</p>
                 <p>Designers</p>
             </div>
-            <div className='space-x-10'>
+            <div className='flex justify-center gap-10 flex-1'>
                 <Link href={'#'}>Skill</Link>
                 <Link href={'#'}>Members</Link>
                 <Link href={'#'}>Plans</Link>
             </div>
-            <div>
+            <div className='basis-1/6'>
                 <Link className='p-3 rounded-lg hover:bg-gray-200 border border-black' href={'#'}>Sign in</Link>
             </div>
+
         </div>
     )
 }
 const Hero = () => {
     return (
-        <div className='relative text-center p-24 w-screen justify-center items-center flex flex-col gap-8'>
+        <div  className='relative text-center p-24 w-screen justify-center items-center flex flex-col gap-8'>
             {/* <Image className='absolute w-screen top-0 left-0' style={{width:"100%", height:"auto", objectFit:"cover"}} src={'https://framerusercontent.com/images/0DSiRYnMCoTHmtG8eaN9mVLWQ.png?scale-down-to=1024'}  width={1000} height={600} alt={''} /> */}
             <p className='text-5xl w-1/4 font-medium'>Become a 10x Designer</p>
             <p className='text-gray-600 w-1/3'>Expand your design skillset through live workshops and a-sync lessons, connect with like-minded individuals and have direct access to industry professionals.</p>
             <button className=' text-xl p-3 rounded-xl text-white bg-black'>Start your journey</button>
             <p>We empower designers from top companies</p>
-            <div>logo logo logo logo</div>
+            <div
+         
+            >logo logo logo logo</div>
+            {/* image */}
+            <Image src="https://framerusercontent.com/images/byZbvCgUt04SjoseAvo8Q2CY.png?scale-down-to=512" alt='' width={180} height={140} className='absolute top-4 left-0 -translate-x-20 heroImage' />
+            <Image src="https://framerusercontent.com/images/hhxAKEvo9mdZI62QoLCsiimhxvA.png?scale-down-to=512" alt='' width={180} height={140} className='absolute top-1/4 left-40 heroImage' />
+            <Image src="https://framerusercontent.com/images/mPo4Z9kT8uL6h52EHVVqUSQA.png?scale-down-to=512" alt='' width={280} height={280} className='absolute top-1/2 left-5 heroImage' />
+            <Image src="https://framerusercontent.com/images/SI36KXH3mYRXC2udbELfZa3W9I.png?scale-down-to=512" alt='' width={240} height={240} className='absolute top-3/4 left-64 heroImage' />
+            <Image src="https://framerusercontent.com/images/ji1OtzDDtSTxzLGRnPySZ0UPQU.png?scale-down-to=512" alt='' width={200} height={200} className='absolute top-24 right-40 heroImage' />
+            <Image src="https://framerusercontent.com/images/H9wwwz7WWQ9EnRppx1Dm078STc.png?scale-down-to=512" alt='' width={260} height={260} className='absolute top-1/2 right-64 heroImage' />
+            <Image src="https://framerusercontent.com/images/IB2oidfT8YHIODn07F9t6zbEiQ.png?scale-down-to=512" alt='' width={200} height={200} className='absolute top-52 right-0 heroImage' />
+            <Image src="https://framerusercontent.com/images/drRXtFMecsniPpmEwmXGa9KfAY.png?scale-down-to=512" alt='' width={200} height={200} className='absolute bottom-0 right-4 heroImage' />
+            {/* Chip morion */}
+            <ChipMotion  className='absolute left-1/4 bg-[#8CFAB2] bottom-40'>Ahmed</ChipMotion>
+            <ChipMotion delay={3} className='absolute right-1/3 bg-[#FE9CEF] top-40'>Stepanie</ChipMotion>
+            <ChipMotion delay={6} className='absolute right-1/4 bg-[#FFFA78] bottom-64'>Mike</ChipMotion>
         </div>
     )
 }
@@ -150,22 +168,22 @@ const Become = () => {
                 </div>
                 {/* items */}
                 <div>
-                    <p  className='text-3xl'>1250+</p>
+                    <p className='text-3xl'>1250+</p>
                     <p>Members</p>
                 </div>
                 {/* items */}
                 <div>
-                    <p  className='text-3xl'>36+</p>
+                    <p className='text-3xl'>36+</p>
                     <p>Nationalites</p>
                 </div>
                 {/* items */}
                 <div>
-                    <p  className='text-3xl'>25+</p>
+                    <p className='text-3xl'>25+</p>
                     <p>Advocates</p>
                 </div>
                 {/* items */}
                 <div>
-                    <p  className='text-3xl'>12+</p>
+                    <p className='text-3xl'>12+</p>
                     <p>Mentors</p>
                 </div>
             </div>
@@ -177,15 +195,15 @@ const More = () => {
         <div className='p-32 space-y-10'>
             <div>
                 <p className='text-3xl text-center'>And there is more,</p>
-                <p className='text-3xl text-center'>A lot more.</p>    
+                <p className='text-3xl text-center'>A lot more.</p>
             </div>
             <div className='columns-3 gap-3'>
-            <MoreCard />
-            <MoreCard />
-            <MoreCard />
-            <MoreCard />
-            <MoreCard />
-            <MoreCard />
+                <MoreCard />
+                <MoreCard />
+                <MoreCard />
+                <MoreCard />
+                <MoreCard />
+                <MoreCard />
             </div>
         </div>
     )
@@ -239,29 +257,29 @@ const BecomeMember = () => {
             <button className='p-3  text-white translate-y-10 bg-black rounded-md'>Become a member</button>
             <div className='flex justify-center gap-5 h-[500px] overflow-hidden'>
                 <div className='flex flex-col gap-5'>
-                    <Image  src={'https://framerusercontent.com/images/0DSiRYnMCoTHmtG8eaN9mVLWQ.png?scale-down-to=1024'}  width={260} height={214} objectFit='cover' alt={''} />
-                    <Image  src={'https://framerusercontent.com/images/0DSiRYnMCoTHmtG8eaN9mVLWQ.png?scale-down-to=1024'}  width={260} height={214} objectFit='cover' alt={''} />
-                    <Image  src={'https://framerusercontent.com/images/0DSiRYnMCoTHmtG8eaN9mVLWQ.png?scale-down-to=1024'}  width={260} height={214} objectFit='cover' alt={''} />
+                    <Image src={'https://framerusercontent.com/images/0DSiRYnMCoTHmtG8eaN9mVLWQ.png?scale-down-to=1024'} width={260} height={214} alt={''} />
+                    <Image src={'https://framerusercontent.com/images/0DSiRYnMCoTHmtG8eaN9mVLWQ.png?scale-down-to=1024'} width={260} height={214} alt={''} />
+                    <Image src={'https://framerusercontent.com/images/0DSiRYnMCoTHmtG8eaN9mVLWQ.png?scale-down-to=1024'} width={260} height={214} alt={''} />
                 </div>
                 <div className='flex flex-col gap-5 translate-y-8'>
-                    <Image  src={'https://framerusercontent.com/images/0DSiRYnMCoTHmtG8eaN9mVLWQ.png?scale-down-to=1024'}  width={260} height={214} objectFit='cover' alt={''} />
-                    <Image  src={'https://framerusercontent.com/images/0DSiRYnMCoTHmtG8eaN9mVLWQ.png?scale-down-to=1024'}  width={260} height={214} objectFit='cover' alt={''} />
-                    <Image  src={'https://framerusercontent.com/images/0DSiRYnMCoTHmtG8eaN9mVLWQ.png?scale-down-to=1024'}  width={260} height={214} objectFit='cover' alt={''} />
+                    <Image src={'https://framerusercontent.com/images/0DSiRYnMCoTHmtG8eaN9mVLWQ.png?scale-down-to=1024'} width={260} height={214} alt={''} />
+                    <Image src={'https://framerusercontent.com/images/0DSiRYnMCoTHmtG8eaN9mVLWQ.png?scale-down-to=1024'} width={260} height={214} alt={''} />
+                    <Image src={'https://framerusercontent.com/images/0DSiRYnMCoTHmtG8eaN9mVLWQ.png?scale-down-to=1024'} width={260} height={214} alt={''} />
                 </div>
                 <div className='flex flex-col gap-5 translate-y-16'>
-                    <Image  src={'https://framerusercontent.com/images/0DSiRYnMCoTHmtG8eaN9mVLWQ.png?scale-down-to=1024'}  width={260} height={214} objectFit='cover' alt={''} />
-                    <Image  src={'https://framerusercontent.com/images/0DSiRYnMCoTHmtG8eaN9mVLWQ.png?scale-down-to=1024'}  width={260} height={214} objectFit='cover' alt={''} />
-                    <Image  src={'https://framerusercontent.com/images/0DSiRYnMCoTHmtG8eaN9mVLWQ.png?scale-down-to=1024'}  width={260} height={214} objectFit='cover' alt={''} />
+                    <Image src={'https://framerusercontent.com/images/0DSiRYnMCoTHmtG8eaN9mVLWQ.png?scale-down-to=1024'} width={260} height={214} alt={''} />
+                    <Image src={'https://framerusercontent.com/images/0DSiRYnMCoTHmtG8eaN9mVLWQ.png?scale-down-to=1024'} width={260} height={214} alt={''} />
+                    <Image src={'https://framerusercontent.com/images/0DSiRYnMCoTHmtG8eaN9mVLWQ.png?scale-down-to=1024'} width={260} height={214} alt={''} />
                 </div>
                 <div className='flex flex-col gap-5 translate-y-8'>
-                    <Image  src={'https://framerusercontent.com/images/0DSiRYnMCoTHmtG8eaN9mVLWQ.png?scale-down-to=1024'}  width={260} height={214} objectFit='cover' alt={''} />
-                    <Image  src={'https://framerusercontent.com/images/0DSiRYnMCoTHmtG8eaN9mVLWQ.png?scale-down-to=1024'}  width={260} height={214} objectFit='cover' alt={''} />
-                    <Image  src={'https://framerusercontent.com/images/0DSiRYnMCoTHmtG8eaN9mVLWQ.png?scale-down-to=1024'}  width={260} height={214} objectFit='cover' alt={''} />
+                    <Image src={'https://framerusercontent.com/images/0DSiRYnMCoTHmtG8eaN9mVLWQ.png?scale-down-to=1024'} width={260} height={214} alt={''} />
+                    <Image src={'https://framerusercontent.com/images/0DSiRYnMCoTHmtG8eaN9mVLWQ.png?scale-down-to=1024'} width={260} height={214} alt={''} />
+                    <Image src={'https://framerusercontent.com/images/0DSiRYnMCoTHmtG8eaN9mVLWQ.png?scale-down-to=1024'} width={260} height={214} alt={''} />
                 </div>
                 <div className='flex flex-col gap-5'>
-                    <Image  src={'https://framerusercontent.com/images/0DSiRYnMCoTHmtG8eaN9mVLWQ.png?scale-down-to=1024'}  width={260} height={214} objectFit='cover' alt={''} />
-                    <Image  src={'https://framerusercontent.com/images/0DSiRYnMCoTHmtG8eaN9mVLWQ.png?scale-down-to=1024'}  width={260} height={214} objectFit='cover' alt={''} />
-                    <Image  src={'https://framerusercontent.com/images/0DSiRYnMCoTHmtG8eaN9mVLWQ.png?scale-down-to=1024'}  width={260} height={214} objectFit='cover' alt={''} />
+                    <Image src={'https://framerusercontent.com/images/0DSiRYnMCoTHmtG8eaN9mVLWQ.png?scale-down-to=1024'} width={260} height={214} alt={''} />
+                    <Image src={'https://framerusercontent.com/images/0DSiRYnMCoTHmtG8eaN9mVLWQ.png?scale-down-to=1024'} width={260} height={214} alt={''} />
+                    <Image src={'https://framerusercontent.com/images/0DSiRYnMCoTHmtG8eaN9mVLWQ.png?scale-down-to=1024'} width={260} height={214} alt={''} />
                 </div>
             </div>
         </div>
@@ -303,7 +321,7 @@ const PriceCard = () => {
 }
 const Footer = () => {
     return (
-        <div className='flex h-[450px] w-2/3 mx-auto gap-3 p-24'>
+        <div className='flex h-[450px] w-5/6 mx-auto gap-3 p-24'>
             <div className='bg-[#FAFAFA] basis-2/3 rounded-md'>
                 <p>Before you go, check out these links</p>
             </div>
