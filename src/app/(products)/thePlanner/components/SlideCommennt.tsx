@@ -5,12 +5,6 @@ import { Slide } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css';
 
 const SlideCommnet = () => {
-
-
-
-    const properties = {
-      
-    }
     const comments = [{
         avatar: "https://theplannersvn.com/wp-content/uploads/2023/09/R02_4140.jpg",
         content: "Planning my wedding was so much less stressful, thanks to The Planners. For 7 months of the planning process, Van was my bridal stylist and sister. She always took care of me, my health and beauty, even when she was",

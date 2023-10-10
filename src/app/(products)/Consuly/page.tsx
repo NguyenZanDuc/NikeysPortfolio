@@ -7,7 +7,7 @@ import InView from './components/Animation/InView'
 type Props = {}
 const page = (props: Props) => {
   return (
-    <div className='w-screen '>
+    <div className='w-screen scroll-smooth '>
       <Hero />
       <Service />
       <More />

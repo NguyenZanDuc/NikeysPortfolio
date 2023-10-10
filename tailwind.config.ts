@@ -10,6 +10,9 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        boost: "#631CD5",
+        boostBackground: "#F6F4FF",
+
         consulyText: "#5F3FB5",
         consulyBackground: "#FAF9FD",
         consulyContent: "#E5E4FF",
