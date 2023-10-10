@@ -42,7 +42,7 @@ const Hero = () => {
             <InView className='flex-1 space-y-5'>
                 <p className='font-semibold text-boost '>FREE FRAMER TEMPLATE</p>
                 <p className='text-7xl font-semibold w-2/3'>Boost your website.</p>
-                <p className='text-gray-500 text-xl w-2/3'>Quickly assemble pages from various categories and customize them to your business's needs.</p>
+                <p className='text-gray-500 text-xl w-2/3'>Quickly assemble pages from various categories and customize them to your business is needs.</p>
                 <div className='flex gap-2'>
                     <Link href={'#'} className='px-4 py-2 rounded-md bg-boost text-white'>Use Template</Link>
                     <Link href={'#'} className='px-4 py-2 rounded-md bg-white text-black shadow-md'>Explore Pages</Link>
