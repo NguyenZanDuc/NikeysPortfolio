@@ -11,7 +11,7 @@ const Navbar = (props: Props) => {
                 <Image src="https://framerusercontent.com/images/Cv8UJS8RQqsc3JXmHnkiIu3QBm4.png" alt="Logo" width={120} height={40} style={{ width: "100%", height: "auto" }} />
             </div>
             <div className='flex items-center gap-4 text-gray-400'>
-                <Link className='hover:text-white' href="#">Home</Link>
+                <Link className='hover:text-white' href="/vible">Home</Link>
                 <Link className='hover:text-white' href="/vible/services">Services</Link>
                 <Link className='hover:text-white' href="/vible/pricing">Pricing</Link>
                 <Link className='hover:text-white' href="/vible/about">About</Link>

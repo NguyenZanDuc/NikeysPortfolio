@@ -10,6 +10,9 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        techPro:"#F84B04",
+        techProBackground:"#101010",
+
         vible: '#EDBE48',
         vibleBackground: '#173A4F',
 
