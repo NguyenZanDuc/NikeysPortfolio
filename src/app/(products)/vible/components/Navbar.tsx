@@ -12,10 +12,9 @@ const Navbar = (props: Props) => {
             </div>
             <div className='flex items-center gap-4 text-gray-400'>
                 <Link className='hover:text-white' href="#">Home</Link>
-                <Link className='hover:text-white' href="#">Services</Link>
-                <Link className='hover:text-white' href="#">Blog</Link>
-                <Link className='hover:text-white' href="#">Pricing</Link>
-                <Link className='hover:text-white' href="#">About</Link>
+                <Link className='hover:text-white' href="/vible/services">Services</Link>
+                <Link className='hover:text-white' href="/vible/pricing">Pricing</Link>
+                <Link className='hover:text-white' href="/vible/about">About</Link>
                 <Link className='p-4 rounded-full bg-vible text-black hover:bg-opacity-70' href="#">Buy template</Link>
             </div>
         </div>
