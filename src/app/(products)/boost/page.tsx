@@ -206,7 +206,11 @@ const Fraction = () => {
             </InView>
             <InView className='justify-items-start'>
                 <Slide duration={40} >
-                    <div className='flex w-screen  justify-around'>
+                    <div className='flex min-w-fit flex-nowrap  gap-10 p-5'>
+                        <TemplateItem />
+                        <TemplateItem />
+                        <TemplateItem />
+                        <TemplateItem />
                         <TemplateItem />
                         <TemplateItem />
                         <TemplateItem />

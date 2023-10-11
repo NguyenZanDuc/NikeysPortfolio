@@ -12,7 +12,7 @@ type Props = {
     ease?: "linear" | "easeIn" | "easeOut" | "easeInOut" | string
 }
 
-const Slide = ({ children, duration, repeatType, directionLeft, className, ease }: Props) => {
+const  Slide = ({ children, duration, repeatType, directionLeft, className, ease }: Props) => {
     const ref = React.useRef<HTMLDivElement>(null)
     const [width, setWidth] = useState(0);
 
@@ -28,14 +28,16 @@ const Slide = ({ children, duration, repeatType, directionLeft, className, ease 
                 animate={{
                     x: directionLeft?[0,  width/2 ]:[0, - width/2 ],
                     transition:{
-                        duration: duration?duration:10,
+                        duration: duration?duration:40,
                         type:"tween",
                         repeat:Infinity,
                         repeatType: repeatType?repeatType:"loop",
                         ease: ease?ease:"linear"
                     }
                 }}
-                className={cn("flex", className)}>
+                className={cn("flex min-w-fit gap-10", className)}>
+                        {children}
+                        {children}
                         {children}
                         {children}
                 </motion.div>

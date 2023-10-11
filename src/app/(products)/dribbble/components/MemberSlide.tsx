@@ -1,7 +1,7 @@
 "use client"
-import React, { useEffect, useRef, useState } from 'react'
-import { motion } from 'framer-motion'
+import React, {  } from 'react'
 import Image from 'next/image'
+import Slide from '@/app/components/Animation/Slide'
 
 type Props = {}
 type Menber = {
@@ -61,21 +61,12 @@ const cards: Menber[] = [{
 }
 ]
 const MenberSlide = (props: Props) => {
-    const ref = useRef<HTMLDivElement>(null);
-    const [width, setWidth] = useState(0);
-    useEffect(() => {
-      if (ref.current) {
-        setWidth(ref.current.getBoundingClientRect().width);
-      }
-    }, []);
     return (
-        <motion.div
-            ref={ref}
-            animate={{ x: [0, -width], transition: { duration: 50, repeat: Infinity, repeatType: 'reverse' } }}
-            className='flex w-auto'
-        >
-            {cards.map((menber, i) => (<Card key={i} name={menber.name} position={menber.position} image={menber.image}  />))}
-        </motion.div>
+        <Slide duration={40}>
+            <div className='flex min-w-fit'>
+                {cards.map((menber, i) => (<Card key={i} name={menber.name} position={menber.position} image={menber.image}  />))}
+            </div>
+        </Slide>
 
 
     )

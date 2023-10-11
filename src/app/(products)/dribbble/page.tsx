@@ -3,8 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { AiFillFacebook, AiOutlineTwitter, AiTwotoneStar } from 'react-icons/ai'
 import { FaInstagramSquare } from 'react-icons/fa'
-import {BsMenuApp, BsMenuButtonWide, BsPinterest} from 'react-icons/bs'
-import SlideTest from './components/SlideTest'
+import { BsMenuButtonWide, BsPinterest} from 'react-icons/bs'
 import MenberSlide from './components/MemberSlide'
 type Props = {}
 
