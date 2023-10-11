@@ -14,7 +14,7 @@ export default function Layout({
   children: React.ReactNode
 }) {
   return (
-   <div>
+   <div className='z-10 relative'>
         <Navbar />
         {children}
         <Footer />
