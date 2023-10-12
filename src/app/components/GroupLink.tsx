@@ -48,6 +48,9 @@ const GroupLink = (props: Props) => {
             <div className='link py-1 px-2 absolute right-[400px] bg-blue-200 top-[800px] rounded-md shadow-lg'>
                 <Link href='/techPro'>TechPro</Link>
             </div>
+            <div className='link py-1 px-2 absolute left-[400px] bg-blue-200 top-[700px] rounded-md shadow-lg'>
+                <Link href='/stylz'>STYLZ</Link>
+            </div>
         </div>
     )
 }
