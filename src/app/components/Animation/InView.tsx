@@ -21,7 +21,7 @@ const InView = ({ children, duration, delay, className, type, style }: Props) =>
                 return {
                     y: isInView ? 0 : 200,
                     opacity: isInView ? 1 : 0,
-                    transition: "all 0.5s cubic-bezier(.05,.67,.44,.97)",
+                    transition: "all 0.9s cubic-bezier(.05,.67,.44,.97)",
                     transitionDelay: `${delay}s`,
                     ...style
                 }

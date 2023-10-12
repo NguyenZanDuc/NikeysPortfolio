@@ -5,6 +5,7 @@ import React, { ReactNode } from 'react'
 type Props = {}
 
 const Navbar = (props: Props) => {
+
     return (
         <nav className='p-10 flex items-center justify-between'>
             <Logo className='scale-125' />
