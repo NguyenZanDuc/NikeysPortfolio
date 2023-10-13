@@ -13,7 +13,7 @@ type Props = {}
 
 const page = (props: Props) => {
     return (
-        <div className='min-w-fit w-screen overflow-hidden'>
+        <div className=' w-screen overflow-hidden'>
             <Hero />
             <Content />
             <Contact />
@@ -25,8 +25,8 @@ const page = (props: Props) => {
 export default page
 const Hero = () => {
     return (
-        <div className='p-32 w-screen bg-vibleBackground space-y-10 text-white'>
-            <div className='flex gap-10'>
+        <div className='md:p-32 p-4 w-screen bg-vibleBackground space-y-4 md:space-y-10 text-white'>
+            <div className='flex flex-col md:flex-row gap-10'>
                 <div className='flex-1 flex flex-col justify-center gap-8'>
                     <InView>
                         <p className='font-semibold text-5xl'>Unleash your creativity at our pottery studio</p>
@@ -43,19 +43,18 @@ const Hero = () => {
                 </InView>
             </div>
             <Slide>
-                    <div className='flex justify-between  w-screen  items-center'>
-                        <Image src="https://framerusercontent.com/images/STNpRVk6MVMO4xZ6f2wqaYeVJQY.png" alt="Logo" width={110} height={40} />
-                        <Image src="https://framerusercontent.com/images/XoPuDyH0F8kFTF7di3C0lIJzpLs.png" alt="Logo" width={110} height={50} />
-                        <Image src="https://framerusercontent.com/images/EyFcmQJhEAdxbDuuc1TWaeAd1zw.png" alt="Logo" width={110} height={50} />
-                        <Image src="https://framerusercontent.com/images/unoSnUsXAGwda8BGfykssdp3Y.png" alt="Logo" width={110} height={50} />
-                        <Image src="https://framerusercontent.com/images/t67NomUjS1OdxsfpH85pncnbR0.png" alt="Logo" width={110} height={50} />
-                        <Image src="https://framerusercontent.com/images/KDwoSBcOIqCXHwxUoA0r0Lzi6Y.png" alt="Logo" width={110} height={50} />
+                    <div className='flex justify-between  md:w-screen min-w-fit gap-5  items-center'>
+                        <Image className='scale-50 md:scale-100' src="https://framerusercontent.com/images/STNpRVk6MVMO4xZ6f2wqaYeVJQY.png" alt="Logo" width={110} height={40} />
+                        <Image className='scale-50 md:scale-100' src="https://framerusercontent.com/images/XoPuDyH0F8kFTF7di3C0lIJzpLs.png" alt="Logo" width={110} height={50} />
+                        <Image className='scale-50 md:scale-100' src="https://framerusercontent.com/images/EyFcmQJhEAdxbDuuc1TWaeAd1zw.png" alt="Logo" width={110} height={50} />
+                        <Image className='scale-50 md:scale-100' src="https://framerusercontent.com/images/unoSnUsXAGwda8BGfykssdp3Y.png" alt="Logo" width={110} height={50} />
+                        <Image className='scale-50 md:scale-100' src="https://framerusercontent.com/images/t67NomUjS1OdxsfpH85pncnbR0.png" alt="Logo" width={110} height={50} />
+                        <Image className='scale-50 md:scale-100' src="https://framerusercontent.com/images/KDwoSBcOIqCXHwxUoA0r0Lzi6Y.png" alt="Logo" width={110} height={50} />
                     </div>
             </Slide>
         </div>
     )
 }
-
 const Content = () => {
     const cards = [{
         title: 'Boundless imagination',
@@ -74,8 +73,8 @@ const Content = () => {
     }]
     return (
         <div>
-            <div className='bg-vible p-28 text-xl flex justify-center gap-10'>
-                <div className='flex gap-2 items-start flex-1'>
+            <div className='bg-vible md:p-28 p-4 text-xl flex flex-col md:flex-row justify-center gap-4 md:gap-10'>
+                <div className='flex  gap-2 items-start flex-1'>
                     <div className='p-2 rounded-full border-[0.3px] border-gray-500'>
                         <BsLightningCharge className="w-5 h-5" />
                     </div>
@@ -94,14 +93,14 @@ const Content = () => {
                     <p>Inspiring: Aesthetic ambiance and supportive community that fuels artistic inspiration.</p>
                 </div>
             </div>
-            <div className='p-28 space-y-10 bg-[#FCF9ED]'>
+            <div className='md:p-28 p-4 space-y-4 md:space-y-10 bg-[#FCF9ED]'>
                 {cards.map((card, index) => index % 2 == 0 ? (
                     <InView key={index} delay={index*0.2}>
                         <CardContext  {...card} />
                     </InView>
                 ) : (
                     <InView key={index} delay={index*0.2}>
-                        <CardContext {...card} className='flex-row-reverse' />
+                        <CardContext {...card} className='md:flex-row-reverse' />
                     </InView>
                 
                 ))}
@@ -117,33 +116,32 @@ type CardProps = {
 }
 const CardContext = ({ title, description, image, className }: CardProps) => {
     return (
-        <div className={cn('w-full flex gap-10', className)}>
-            <div className='flex-1 p-10'>
+        <div className={cn('w-full flex flex-col md:flex-row md:gap-10', className)}>
+            <div className='flex-1 md:p-10 p-4'>
                 <Image src={image} alt="Image" width={748} height={574} style={{ width: "100%", height: "auto" }} />
             </div>
-            <div className='flex-1 flex flex-col justify-center gap-8 p-10'>
+            <div className='flex-1 flex flex-col justify-center md:gap-8 gap-2 p-10'>
                 <p className='text-2xl font-semibold '>{title}</p>
                 <p className='text-xl'>{description}</p>
             </div>
         </div>
     )
 }
-
 const Contact = () => {
     return (
         <div className='bg-[#FCF9ED] '>
-            <div className='p-32 flex flex-col justify-center items-center gap-5'>
+            <div className='md:p-32 p-4 flex flex-col justify-center items-center gap-3 md:gap-5'>
                 <InView>
                     <p className='text-2xl font-semibold'>Come and express yourself</p>
                 </InView>
-                <InView delay={0.2} className='w-1/3 text-center'>
+                <InView delay={0.2} className='md:w-1/3 text-center'>
                     <p >Located in the heart of Riga, we provide a warm and inviting atmosphere that inspires creativity and fosters artistic growth.</p>
                 </InView>
                 <InView delay={0.4}>
                     <Link className='p-4 rounded-full bg-vible text-black hover:bg-opacity-70' href="#">Contact us</Link>
                 </InView>
             </div>
-            <div className='w-[90%] mx-auto rounded-md py-20 px-40 flex gap-10 bg-[#E6E6DD]'>
+            <div className='w-[90%] mx-auto rounded-md md:py-20 md:px-40 p-4 flex flex-col md:flex-row gap-10 bg-[#E6E6DD]'>
                 <div className='basis-1/3'>
                     <Image src="https://framerusercontent.com/images/xGWP5NFdgYSPvpvu9NuCtqEs1d0.jpg?scale-down-to=512" alt="Logo" width={1000} height={1000} style={{ width: "100%", height: "auto" }} className='rounded-full' />
                 </div>
@@ -168,22 +166,22 @@ const Contact = () => {
 }
 const More = () => {
     return (
-        <div className='bg-[#FCF9ED] p-28 text-xl divide-x flex justify-center gap-10'>
-            <InView className='flex px-6 gap-4 flex-col group items-start'>
+        <div className='bg-[#FCF9ED] md:p-28 p-4 text-xl  md:divide-x flex flex-col md:flex-row justify-center gap-10'>
+            <InView className='flex  px-6 gap-4 flex-row md:flex-col group items-start'>
                 <div className='p-2 rounded-full border-[0.3px] border-gray-500'>
                     <BsLightningCharge className="w-5 h-5" />
                 </div>
                 <p>Read blog where we share insights, tips, and inspiring stories about the art of clay sculpting and pottery making.</p>
                 <GrLinkNext className="group-hover:translate-x-3 duration-300" />
             </InView>
-            <InView delay={0.3} className='flex px-6 gap-4 flex-col group items-start'>
+            <InView delay={0.3} className='flex px-6 gap-4 flex-row md:flex-col group items-start'>
                 <div className='p-2 rounded-full border-[0.3px] border-gray-500'>
                     <CiFaceSmile className="w-5 h-5" />
                 </div>
                 <p>Learn the story behind our pottery studio, our passion for the art form, and the vision that drives us to inspire creativity.</p>
                 <GrLinkNext className="group-hover:translate-x-3 duration-300" />
             </InView>
-            <InView delay={0.6} className='flex px-6 gap-4 flex-col group items-start'>
+            <InView delay={0.6} className='flex px-6 gap-4 flex-row md:flex-col group items-start'>
                 <div className='p-2 rounded-full border-[0.3px] border-gray-500'>
                     <BsKey className="w-5 h-5" />
                 </div>

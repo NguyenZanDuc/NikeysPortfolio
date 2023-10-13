@@ -6,14 +6,14 @@ type Props = {}
 const Footer = (props: Props) => {
     return (
         <div>
-            <div className='bg-vible flex items-center group justify-center p-32 gap-3'>
+            <div className='bg-vible flex flex-col md:flex-row items-center group justify-center md:p-32 p-4 gap-3'>
                 <p>Join our newsletter and stay updated:</p>
-                <div className='w-[400px] h-[50px] rounded-full border-[0.3px] flex p-1  bg-[#F6E1AF]'>
+                <div className='md:w-[400px] h-[50px] rounded-full border-[0.3px] flex p-1  bg-[#F6E1AF]'>
                     <input type="text" placeholder='Your email' className='placeholder:text-gray-400 flex-1 px-2 placeholder:text-sm bg-transparent outline-none' />
                     <button className='p-2 rounded-full bg-vibleBackground text-vible animate-pulse group-hover:animate-none group-hover:scale-105 duration-1000'>Subscribe</button>
                 </div>
             </div>
-            <div className='flex p-32 text-white bg-vibleBackground'>
+            <div className='flex md:p-32 p-4 flex-col md:flex-row gap-4 text-xs md:text-base text-white bg-vibleBackground'>
                 <div className='flex-1 space-y-6'>
                     <Image src="https://framerusercontent.com/images/Cv8UJS8RQqsc3JXmHnkiIu3QBm4.png" alt="Logo" width={120} height={50} />
                     <p className='w-2/3'>Discover the joy of sculpting clay and bring your artistic visions to life at our renowned pottery studio.</p>

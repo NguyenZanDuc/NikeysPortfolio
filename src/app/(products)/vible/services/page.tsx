@@ -24,11 +24,11 @@ export default page
 
 const Hero = () => {
     return (
-        <div className='bg-vibleBackground text-white p-32 flex flex-col justify-center items-center gap-10'>
-            <InView className='text-6xl font-semibold'>
+        <div className='bg-vibleBackground text-white md:p-32 p-4 flex flex-col justify-center items-center gap-4 md:gap-10'>
+            <InView className='md:text-6xl text-2xl font-semibold'>
                 Services
             </InView>
-            <InView delay={0.2} className='w-1/2 text-center'>
+            <InView delay={0.2} className='md:w-1/2 text-center'>
                 Discover our comprehensive range of pottery services, including classes, workshops, studio rentals, and custom pottery creations tailored to your artistic needs.
             </InView>
         </div>
@@ -53,14 +53,14 @@ const Content = () => {
     return (
         <div>
 
-            <div className='p-28 space-y-10 bg-[#FCF9ED]'>
+            <div className='md:p-28 p-4 md:space-y-10 space-y-4 bg-[#FCF9ED]'>
                 {cards.map((card, index) => index % 2 == 0 ? (
                     <InView key={index} delay={index * 0.2}>
                         <CardContext  {...card} />
                     </InView>
                 ) : (
                     <InView key={index} delay={index * 0.2}>
-                        <CardContext {...card} className='flex-row-reverse' />
+                        <CardContext {...card} className='md:flex-row-reverse' />
                     </InView>
 
                 ))}
@@ -77,11 +77,11 @@ type CardProps = {
 }
 const CardContext = ({ title, description, image, className }: CardProps) => {
     return (
-        <div className={cn('w-full flex gap-10', className)}>
-            <div className='flex-1 p-10'>
+        <div className={cn('w-full flex flex-col md:flex-row gap-4 md:gap-10', className)}>
+            <div className='flex-1 md:p-10'>
                 <Image src={image} alt="Image" width={748} height={574} style={{ width: "100%", height: "auto" }} />
             </div>
-            <div className='flex-1 flex flex-col justify-center gap-8 p-10'>
+            <div className='flex-1 flex flex-col justify-center md:gap-8 p-4 gap-4 md:p-10'>
                 <p className='text-2xl font-semibold '>{title}</p>
                 <p className='text-xl'>{description}</p>
             </div>
@@ -154,19 +154,19 @@ const CardMore = ({ title, description, icon }: CardMoreProps) => {
 const Contact = () => {
     return (
         <div className='bg-[#FCF9ED] '>
-            <div className='p-32 flex flex-col justify-center items-center gap-5'>
+            <div className='md:p-32 p-4 flex flex-col justify-center items-center gap-5'>
                 <InView>
                     <p className='text-2xl font-semibold'>Come and express yourself</p>
                 </InView>
-                <InView delay={0.2} className='w-1/3 text-center'>
+                <InView delay={0.2} className='md:w-1/3 text-center'>
                     <p >Located in the heart of Riga, we provide a warm and inviting atmosphere that inspires creativity and fosters artistic growth.</p>
                 </InView>
                 <InView delay={0.4}>
                     <Link className='p-4 rounded-full bg-vible text-black hover:bg-opacity-70' href="#">Contact us</Link>
                 </InView>
             </div>
-            <div className='p-32 bg-vible'>
-                <p className='w-1/2 mx-auto text-center'>Join our vibrant community of artists and experience the joy of creating stunning pottery that will be cherished for generations to come.</p>
+            <div className='md:p-32 p-4 bg-vible'>
+                <p className='md:w-1/2 mx-auto text-center'>Join our vibrant community of artists and experience the joy of creating stunning pottery that will be cherished for generations to come.</p>
             </div>
         </div>
     )
@@ -186,9 +186,9 @@ const Question = () => {
         answer: 'Our classes are limited to 10 people to ensure that everyone gets the attention they need.'
     }]
     return (
-        <div className='p-32 space-y-10  text-center'>
-            <p className='text-5xl font-semibold'>Frequently asked questions</p>
-            <div className='w-1/2 mx-auto flex flex-col divide-y'>
+        <div className='md:p-32 p-4 space-y-10  text-center'>
+            <p className='md:text-5xl text-2xl font-semibold'>Frequently asked questions</p>
+            <div className='md:w-1/2 mx-auto flex flex-col divide-y'>
                 {cards.map((card, index) => (
                     <InView key={index} delay={index * 0.2}>
                         <CardQuestion {...card} />
@@ -205,7 +205,7 @@ type CardQuestionProps = {
 const CardQuestion = ({ask, answer}:CardQuestionProps) => {
     return (
         <div className='space-y-3 py-2 group flex cursor-pointer flex-col items-start '>
-            <p className='font-semibold text-xl'>{ask}</p>
+            <p className='font-semibold md:text-xl text-xs'>{ask}</p>
             <p className='hidden group-hover:inline-flex '>{answer}</p>
         </div>
     )

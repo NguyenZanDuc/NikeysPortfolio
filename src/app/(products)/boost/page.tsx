@@ -38,17 +38,17 @@ const Hero = () => {
         { image: "https://framerusercontent.com/images/5Vlf0Ezf7vKncSiQpWsqHLXsA.webp" },
     ]
     return (
-        <div className='flex h-screen px-32  w-screen items-center bg-gradient-to-br from-white to-[#bfb6e7] overflow-hidden'>
+        <div className='flex md:flex-row flex-col p-4 md:h-screen md:px-32 px-4  w-screen items-center bg-gradient-to-br from-white to-[#bfb6e7] overflow-hidden'>
             <InView className='flex-1 space-y-5'>
                 <p className='font-semibold text-boost '>FREE FRAMER TEMPLATE</p>
-                <p className='text-7xl font-semibold w-2/3'>Boost your website.</p>
+                <p className='md:text-7xl text-3xl font-semibold w-2/3'>Boost your website.</p>
                 <p className='text-gray-500 text-xl w-2/3'>Quickly assemble pages from various categories and customize them to your business is needs.</p>
-                <div className='flex gap-2'>
+                <div className='flex  gap-2'>
                     <Link href={'#'} className='px-4 py-2 rounded-md bg-boost text-white'>Use Template</Link>
                     <Link href={'#'} className='px-4 py-2 rounded-md bg-white text-black shadow-md'>Explore Pages</Link>
                 </div>
             </InView>
-            <InView delay={0.2} className='flex-1 flex  flex-wrap justify-center items-start gap-4'>
+            <InView delay={0.2} className='flex-1 md:flex  hidden  flex-wrap justify-center items-start gap-4'>
                 {listPage.map((item, index) => {
                     return (
                         <div key={index}>
@@ -84,14 +84,14 @@ const Toolkit = () => {
     }
     ]
     return (
-        <div className='p-32  flex-col flex justify-center items-center gap-5'>
+        <div className='md:p-32 p-4  flex-col flex justify-center items-center gap-5'>
             <InView >
                 <p className='text-boost font-semibold'>COMPLETE TOOLKIT</p>
             </InView>
-            <InView delay={0.2} className='w-1/2'>
-                <p className='text-6xl  text-center'>Building  blocks for your next website.</p>
+            <InView delay={0.2} className='md:w-1/2'>
+                <p className='md:text-6xl text-2xl  text-center'>Building  blocks for your next website.</p>
             </InView>
-            <div className='flex justify-center gap-3 p-20'>
+            <div className='flex  justify-center flex-col md:flex-row gap-3 p-4 md:p-20'>
                 {listCard.map((item, index) => {
                     return (
                         <InView key={index} delay={index * 0.2} >
@@ -140,11 +140,11 @@ const Versatitle = () => {
         { image: "https://framerusercontent.com/images/5Vlf0Ezf7vKncSiQpWsqHLXsA.webp" },
     ]
     return (
-        <div id='pages' className='flex px-32 h-screen overflow-scroll'>
+        <div id='pages' className='flex  md:px-32 px-4 h-screen overflow-scroll'>
             <InView className='sticky top-10 flex-1 space-y-5'>
                 <p className='font-semibold text-boost '>VERSATILE PAGES</p>
-                <p className='text-6xl font-semibold w-2/3'>Complete pages for your project.</p>
-                <p className='text-gray-500 w-2/3'>Create beautiful pages within minutes directly in Framer. Easily customize images, content, and style to make it your own.</p>
+                <p className='md:text-6xl text-2xl font-semibold md:w-2/3'>Complete pages for your project.</p>
+                <p className='text-gray-500 md:w-2/3'>Create beautiful pages within minutes directly in Framer. Easily customize images, content, and style to make it your own.</p>
             </InView>
             <InView delay={0.2} className='flex-1 flex flex-wrap justify-center gap-4'>
                 {listPage.map((item, index) => {
@@ -161,12 +161,12 @@ const Versatitle = () => {
 const Feature = () => {
     const listCard = [{}, {}, {}, {}, {}, {}]
     return (
-        <div className='p-32 bg-boostBackground  flex-col flex justify-center items-center gap-5'>
+        <div className='md:p-32 p-4 bg-boostBackground  flex-col flex justify-center items-center gap-5'>
             <InView>
                 <p className='text-boost font-semibold'>FEATURES</p>
             </InView>
-            <InView delay={0.3} className='w-1/2'>
-                <p className='text-6xl  text-center'>Essential features for your next website.</p>
+            <InView delay={0.3} className='md:w-1/2'>
+                <p className='md:text-6xl text-2xl  text-center'>Essential features for your next website.</p>
             </InView>
             <InView delay={0.5}>
                 <div className='flex justify-center flex-wrap gap-6 p-14'>
@@ -193,12 +193,12 @@ const CardFeature = () => {
 }
 const Fraction = () => {
     return (
-        <div className='p-28 bg-[#7421FC] text-white  flex-col flex justify-center items-center gap-10'>
+        <div className='md:p-28 p-4 bg-[#7421FC] text-white  flex-col flex justify-center items-center gap-4 md:gap-10'>
             <InView>
                 <p className=' font-semibold'>FRACTION TEMPLATE</p>
             </InView>
-            <InView delay={0.3} className='w-1/2'>
-                <p className='text-6xl  text-center'>Build a website that performs better.</p>
+            <InView delay={0.3} className='md:w-1/2'>
+                <p className='md:text-6xl text-2xl  text-center'>Build a website that performs better.</p>
             </InView>
             <InView delay={0.6} className='flex gap-2'>
                 <Link href={'#'} className='px-4 py-2 rounded-md bg-white text-black'>Use Template</Link>

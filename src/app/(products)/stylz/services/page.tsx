@@ -1,9 +1,8 @@
-import Image from 'next/image'
-import { cn } from '@/app/lib/utils'
+
 import React from 'react'
-import Link from 'next/link'
 import { IoCut } from 'react-icons/io5'
 import InView from '@/app/components/Animation/InView'
+import CardContent from '../components/Card/CardContent'
 type Props = {}
 
 const page = (props: Props) => {
@@ -163,52 +162,3 @@ const Content = () => {
 
 
 
-const CutIcon = () => {
-    return (
-        <div className='w-6 h-6 text-white'>
-            <svg xmlns="http://www.w3.org/2000/svg" color='#fff' xmlnsXlink="http://www.w3.org/1999/xlink" style={{ width: '100%', height: "100%" }} viewBox="0 0 36 36" preserveAspectRatio="none" width="100%" height="100%"><use href="#svg846896968_7679"></use></svg>
-        </div>
-    )
-}
-type CardContentProps = {
-    image: string
-    title: string
-    description: string
-    href: string
-    linkText: string
-    className?: string
-    details: Detail[]
-}
-type Detail ={
-    icon: React.ReactNode
-    name: string
-}
-const CardContent = ({ image, title, description, href, linkText, className, details }: CardContentProps) => {
-    return (
-        <div className={cn("flex flex-col md:flex-row gap-5 h-[600px]", className)}>
-            <InView delay={0.2} className="rounded-2xl flex-1 overflow-hidden">
-                <Image
-                    src={image}
-                    alt={''}
-                    width={1000}
-                    height={1000}
-                    style={{ width: "100%", height: "100%", objectFit: "cover" }} />
-            </InView>
-            <InView delay={0.4} className="rounded-2xl text-gray-300 bg-[#1D1D1D] flex  flex-col flex-1 justify-center items-center gap-6">
-                <div className='md:text-5xl text-2xl font-semibold text-white'>{title}</div>
-                <div className='text-sm text-center md:w-1/2 w-3/4'>{description}</div>
-                <div className='flex justify-center gap-5'>
-                    {details.map((detail, i) => {
-                        return (
-                            <div key={i} className='flex flex-col gap-2 items-center'>
-                                <div className=''>{detail.icon}</div>
-                                <div className='md:text-sm text-center text-xs'>{detail.name}</div>
-                            </div>
-                        )
-                    }
-                    )}
-                </div>
-            </InView>
-        </div>
-    )
-}

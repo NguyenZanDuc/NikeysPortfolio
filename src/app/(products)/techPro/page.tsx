@@ -23,11 +23,11 @@ export default page
 
 const Hero = () => {
     return (
-        <div className='px-32'>
-            <div className='flex'>
-                <div className='flex-1 space-y-6'>
+        <div className='md:px-32 px-4'>
+            <div className='flex md:flex-row flex-col'>
+                <div className='flex-1 space-y-2 md:space-y-6'>
                     <p> Welcome to TechPro</p>
-                    <InView type="RIGHT" className='text-6xl font-semibold'>Leading global technical service provider</InView>
+                    <InView type="RIGHT" className='md:text-6xl text-2xl font-semibold'>Leading global technical service provider</InView>
                     <InView type="RIGHT" delay={0.2} className='text-gray-500'>We harness the power of the latest technological to provide you with solutions that propel your business.</InView>
                     <InView delay={0.4} type='FADE' className='flex gap-4'>
                         <Link className='px-4 py-2 bg-techPro text-white rounded-md' href={''}>Get Started</Link>
@@ -48,25 +48,22 @@ const Hero = () => {
                         </InView>
                     </div>
                 </div>
-                <div className='flex-1 p-20 relative'>
+                <div className='flex-1 md:p-20 p-4 relative'>
                     <InView type='FADE' delay={1} className='rotate-[20deg] relative overflow-hidden -translate-y-12 z-50 '>
                         <Image className='relative z-40 translate-y-20 -rotate-[20deg]' src={'https://framerusercontent.com/images/cG6ARQcLGLjGOFfE0MVUM2w1smQ.png?scale-down-to=512'} alt={''} width={1000} height={1000} style={{ width: "80%", height: "100%" }} />
                     </InView>
                     <div
                         style={{ borderRadius: "50% 50% 10% 12% / 88% 89% 10% 11% " }}
-                        className='absolute top-1/4   w-[440px] h-[400px] rotate-[40deg] z-0  left-1/4 bg-[#E4F1FF]' />
+                        className='absolute md:top-1/4 top-20   md:w-[440px] w-[220px] h-[200px] md:h-[400px] rotate-[40deg] z-0  left-10  md:left-1/4 bg-[#E4F1FF]' />
                     <InView delay={0.2} type='FADE' >
                         <div
                             style={{ borderRadius: "50% 50% 10% 12% / 88% 89% 10% 11% " }}
-                            className='absolute top-1/4  w-[400px] h-[400px] rotate-[20deg] z-10  left-1/4 bg-techPro' />
+                            className='absolute  md:top-1/4 top-20   md:w-[440px] w-[220px] h-[200px] md:h-[400px] rotate-[20deg] z-10 left-10  md:left-1/4 bg-techPro' />
                     </InView>
                     <InView className='absolute top-1/2 z-50 shadow-sm' type="RIGHT" delay={1.2} >
                         <Image src={"https://framerusercontent.com/images/vMkGnfeFwaUde0sIvinogR4BbtU.png"} alt='' width={200} height={50} />
                     </InView>
-                    <div
-                        style={{ borderRadius: "50% 50% 10% 12% / 88% 89% 10% 11% " }}
-                        className='absolute top-1/4  w-[40px] h-[40px] animate-spin  z-10 opacity-30  left-1/4 bg-techPro' />
-                </div>
+                    </div>
             </div>
         </div>
     )
@@ -90,12 +87,12 @@ const Services = () => {
         },
     ]
     return (
-        <div className='bg-gray-100 p-32 space-y-5 '>
+        <div className='bg-gray-100 md:p-32 p-4 space-y-2 md:space-y-5 '>
             <InView>What we provide</InView>
-            <InView delay={0.2} className='flex justify-between'>
-                <p className='basis-1/3 font-semibold text-2xl'>We provide the best technical services</p>
-                <div>
-                    <Link className='text-xl px-4 py-2 rounded-md font-semibold text-white bg-black hover:text-techPro' href={'#'}>All Services</Link>
+            <InView delay={0.2} className='flex flex-col md:flex-row gap-2 justify-between '>
+                <p className='md:basis-1/3  font-semibold text-2xl'>We provide the best technical services</p>
+                <div className='flex justify-end md:block'>
+                    <Link className='md:text-xl  text-xs px-4 py-2 rounded-md font-semibold text-white bg-black hover:text-techPro' href={'#'}>All Services</Link>
                 </div>
             </InView>
             <InView delay={0.4} className='flex gap-4 justify-center flex-wrap'>
@@ -125,13 +122,14 @@ const ServiceCard = ({ icon, title, description }: ServiceCardProps) => {
 }
 const About = () => {
     return (
-        <div className='p-32 space-y-10'>
+        <div className='md:p-32 p-4 space-y-4 md:space-y-10'>
             {/* section */}
-            <div className='flex gap-10'>
+            <div className='flex flex-col md:flex-row gap4 md:gap-10'>
+
                 <div className='flex-1'>
                     <Image src={'https://framerusercontent.com/images/wT4JiFfQetAZm4xaj36qqJ4bB1s.png?scale-down-to=512'} alt={''} width={1000} height={1000} style={{ width: "80%", height: "100%" }} />
                 </div>
-                <div className='flex-1 space-y-5 text-lg'>
+                <div className='flex-1 md:space-y-5 text-lg'>
                     <InView >About us</InView>
                     <InView delay={0.2} className='text-3xl font-semibold'>World leading technical company since 1997</InView>
                     <InView delay={0.4} className='text-gray-500'>Our mission was clear - to empower businesses and individuals with cutting-edge technology solutions that would transform the way they operate, communicate, and thrive in the digital age.</InView>
@@ -150,11 +148,11 @@ const About = () => {
                 </div>
             </div>
             {/* section */}
-            <div className='flex flex-row-reverse gap-10'>
+            <div className='flex flex-col gap4 md:gap-10 md:flex-row-reverse'>
                 <div className='flex-1'>
                     <Image src={'https://framerusercontent.com/images/MnZWH8Y03bsYQwGi3eVE5fymoY.png?scale-down-to=1024'} alt={''} width={1000} height={1000} style={{ width: "80%", height: "100%" }} />
                 </div>
-                <div className='flex-1 space-y-5 text-lg'>
+                <div className='flex-1 md:space-y-5 text-lg'>
                     <InView >What we offer</InView>
                     <InView delay={0.2} className='text-3xl font-semibold'>Experience backed by our expertise at your service</InView>
                     <InView delay={0.4} className='text-gray-500'>Throughout our journey, [Company Name] has achieved numerous milestones that reflect our unwavering dedication to technical excellence.</InView>
@@ -182,7 +180,7 @@ const About = () => {
             {/* Feedback */}
             <div className='space-y-5'>
                 <InView className='text-center'>Testimonials</InView>
-                <InView delay={0.2} className='text-center text-4xl w-1/2 mx-auto font-semibold'>Kind words from customers around the world</InView>
+                <InView delay={0.2} className='text-center md:text-4xl text-2xl md:w-1/2 mx-auto font-semibold'>Kind words from customers around the world</InView>
                 <div className='overflow-hidden bg-gray-100'>
                     <Slide duration={40} className=''>
                         <div className='flex min-w-fit gap-10 py-6 '>
@@ -224,9 +222,9 @@ const FeedbackCard = () => {
 }
 const Blogs = () => {
     return (
-        <div className='p-32 space-y-10'>
+        <div className='md:p-32 p-4 space-y-4 md:space-y-10'>
             <InView>Our Blogs</InView>
-            <InView delay={0.2} className='flex gap-20'>
+            <InView delay={0.2} className='flex flex-col md:flex-row gap-4 md:gap-20'>
                 <p className='flex-1 text-4xl font-semibold '>Lets discover our latest finished project</p>
                 <p className='flex-1 text-gray-500'>This endeavor has been a testament to our unwavering commitment to innovation, excellence, and delivering solutions that exceed expectations.</p>
             </InView>

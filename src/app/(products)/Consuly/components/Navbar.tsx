@@ -1,11 +1,12 @@
 import Image from "next/image"
 import Link from "next/link"
+import { BiMenu } from "react-icons/bi"
 
 export const Navbar = () => {
     return (
-      <div className='container mx-auto flex items-center px-24 py-4'>
+      <div className='container mx-auto flex justify-between items-center md:px-24 px-4 py-4'>
         <Logo className=' ' />
-        <div className='flex h-full flex-1 font-semibold justify-center gap-8 items-center'>
+        <div className='md:flex hidden h-full flex-1 font-semibold justify-center gap-8 items-center'>
           <Link href={'#'} >Home</Link>
           <div  className='relative group' >
             Page
@@ -14,8 +15,11 @@ export const Navbar = () => {
           <Link href={'/Consuly/about'} >About</Link>
           <Link href={'#'} >Contact</Link>
         </div>
-        <div className='flex basis-1/6 justify-center items-center '>
+        <div className='md:flex hidden basis-1/6 justify-center items-center '>
           <Link className='px-4 py-2 rounded-md text-white bg-consulyText' href={'#'} >Get Started</Link>
+        </div>
+        <div>
+          <BiMenu />
         </div>
       </div>
     )

@@ -1,17 +1,14 @@
-import Image from 'next/image'
 import React from 'react'
 import {
   Table,
   TableBody,
-  TableCaption,
   TableCell,
   TableHead,
   TableHeader,
   TableRow,
 } from "@/app/components/UI/Table"
-import Link from 'next/link'
-import { cn } from '@/app/lib/utils'
 import InView from '@/app/components/Animation/InView'
+import CardContent from '../components/Card/CardContent'
 type Props = {}
 
 const page = (props: Props) => {
@@ -21,7 +18,7 @@ const page = (props: Props) => {
         <InView className='md:text-6xl text-2xl text-center font-bold'>Our Prices</InView>
         <InView delay={0.2} className='text-xl md:w-1/2 mx-auto text-center text-gray-400'>Explore our transparent pricing for top-notch hair services. Affordable luxury awaits at our salon, where beauty meets your budget with exceptional value.</InView>
       </div>
-      {/* haircut table */}
+      {/* haircut  */}
       <InView className='bg-[#1D1D1D] flex flex-col justify-center items-center rounded-3xl md:p-20 p-4 gap-4 md:gap-8'>
         <p className='md:text-4xl text-2xl font-bold'>Haircuts</p>
         <p className='text-gray-400 md:w-2/3 text-center'>Ready for a transformation? Book your appointment with us today and step into a world of personalized beauty and exceptional haircare. Your journey begins here.</p>
@@ -47,12 +44,12 @@ const page = (props: Props) => {
           </div>
         </InView>
       </div>
-      {/* hair colour table */}
+      {/* hair colour  */}
       <InView className='bg-[#1D1D1D] flex flex-col justify-center items-center rounded-3xl md:p-20 md:gap-8 p-4 gap-4'>
         <p className='md:text-4xl text-2xl font-bold'>Hair Colour</p>
         <p className='text-gray-400 md:w-2/3 text-center'>Ready for a transformation? Book your appointment with us today and step into a world of personalized beauty and exceptional haircare. Your journey begins here.</p>
         <div className='w-[80%]'>
-          <HaircutTable />
+          <HairColourTable />
         </div>
       </InView>
       <CardContent className='md:flex-row-reverse'
@@ -259,30 +256,3 @@ const hairColour = [
   )
 }
 
-type CardContentProps = {
-  image: string
-  title: string
-  description: string
-  href: string
-  linkText: string,
-  className?: string
-}
-const CardContent = ({ image, title, description, href, linkText, className }: CardContentProps) => {
-  return (
-    <div className={cn("flex md:flex-row flex-col gap-5 md:h-[600px]", className)}>
-      <InView className="rounded-2xl flex-1 overflow-hidden">
-        <Image
-          src={image}
-          alt={''}
-          width={1000}
-          height={1000}
-          style={{ width: "100%", height: "100%", objectFit: "cover" }} />
-      </InView>
-      <InView delay={0.2} className="rounded-2xl bg-[#1D1D1D] flex  flex-col flex-1 justify-center p-4 items-center gap-6">
-        <div className='md:text-5xl text-2xl font-semibold'>{title}</div>
-        <div className='text-sm text-center md:w-1/2 text-gray-300'>{description}</div>
-        <Link href={href} className='font-semibold p-2 md:text-base text-xs inline-block bg-white text-black rounded-md border'>{linkText}</Link>
-      </InView>
-    </div>
-  )
-}

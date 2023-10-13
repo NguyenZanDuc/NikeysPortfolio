@@ -17,9 +17,9 @@ export default page
 
 const Hero = () => {
     return (
-        <div className='w-screen bg-consulyText relative z-10 text-white flex justify-center flex-col gap-5 items-center p-32'>
+        <div className='w-screen bg-consulyText relative z-10 text-white flex justify-center flex-col gap-5 items-center p-4 md:p-32'>
             <p className='text-6xl font-semibold'>Blogs</p>
-            <p className='w-1/2 text-center'>Righteous indignation and dislike men who are so beguiled and demoralized by the charms of we denounce with righteous indignation and dislike men who are so beguiled and demoralized </p>
+            <p className='md:w-1/2 text-center'>Righteous indignation and dislike men who are so beguiled and demoralized by the charms of we denounce with righteous indignation and dislike men who are so beguiled and demoralized </p>
         </div>
     )
 }
@@ -48,7 +48,7 @@ const Content = () => {
     }]
     return (
 
-        <div className=' gap-14 grid grid-cols-2  p-32'>
+        <div className=' md:gap-14 gap-4 grid md:grid-cols-2 p-4  md:p-32'>
             {blogs.map((blog, index) => {
                 return (
                     <CardBlog key={index} className='shadow-md rounded-xl' title={blog.title} date={blog.date} description={blog.description} image={blog.image} />

@@ -18,11 +18,11 @@ const page = (props: Props) => {
 export default page
 const Hero = () => {
     return (
-        <div className='bg-vibleBackground text-white p-32 flex flex-col justify-center items-center gap-10'>
-            <InView className='text-6xl font-semibold'>
+        <div className='bg-vibleBackground text-white md:p-32 p-4 flex flex-col justify-center items-center gap-4 md:gap-10'>
+            <InView className='md:text-6xl text-2xl font-semibold'>
                 Pricing
             </InView>
-            <InView delay={0.2} className='w-1/2 text-center'>
+            <InView delay={0.2} className='md:w-1/2 text-center'>
                 Explore our transparent pricing options, designed to provide affordable access to our pottery services, classes, workshops, and pottery materials. Unleash your creativity without breaking the bank.
             </InView>
         </div>
@@ -51,7 +51,7 @@ const Content = () => {
         link: '#'
     }]
     return (
-        <div className='flex p-28 justify-center gap-4 flex-wrap'>
+        <div className='flex md:p-28 p-4 justify-center gap-4 flex-wrap'>
             {cards.map((card, index) => (
                 <InView key={index} delay={index * 0.2}>
                     <CardPrice {...card} />
@@ -83,18 +83,18 @@ const CardPrice = ({ title, description, category, price, link }: CardPriceProps
 const Contact = () => {
     return (
         <div className='bg-[#FCF9ED] '>
-            <div className='p-32 flex flex-col justify-center items-center gap-5'>
+            <div className='md:p-32 p-4 flex flex-col justify-center items-center gap-5'>
                 <InView>
                     <p className='text-2xl font-semibold'>Come and express yourself</p>
                 </InView>
-                <InView delay={0.2} className='w-1/3 text-center'>
+                <InView delay={0.2} className='md:w-1/3 text-center'>
                     <p >Located in the heart of Riga, we provide a warm and inviting atmosphere that inspires creativity and fosters artistic growth.</p>
                 </InView>
                 <InView delay={0.4}>
                     <Link className='p-4 rounded-full bg-vible text-black hover:bg-opacity-70' href="#">Contact us</Link>
                 </InView>
             </div>
-            <div className=' p-20 flex divide-x '>
+            <div className=' md:p-20 p-4 flex-col md:flex-row gap-10 md:gap-0 flex md:divide-x '>
                 <CardCommet />
                 <CardCommet />
                 <CardCommet />
@@ -104,7 +104,7 @@ const Contact = () => {
 }
 const CardCommet = () => {
     return (
-        <div className='flex-1 px-10 flex-col justify-start flex gap-4'>
+        <div className='flex-1 md:px-10 px-4 text-xs md:text-base flex-col justify-start p-2 rounded-md flex gap-2 shadow-md md:gap-4'>
             <InView className='flex'>
                 <AiFillStar className="text-green-600 w-5 h-5" />
                 <AiFillStar className="text-green-600 w-5 h-5" />

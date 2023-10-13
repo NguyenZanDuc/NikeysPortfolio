@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React, { ReactNode } from 'react'
+import { BiMenu } from 'react-icons/bi'
 
 type Props = {}
 
@@ -9,7 +10,7 @@ const Navbar = (props: Props) => {
     return (
         <nav className='p-10 flex items-center justify-between'>
             <Logo className='scale-125' />
-            <div className='flex-1 text-xl flex justify-center divide-x'>
+            <div className='flex-1 text-xl md:flex hidden justify-center divide-x'>
                 <Link className='px-8 text-gray-500 hover:text-black' href={'/techPro'}>Home</Link>
                 <div className='px-8 text-gray-500 group relative hover:text-black' >
                     Page
@@ -21,7 +22,10 @@ const Navbar = (props: Props) => {
                 <Link className='px-8 text-gray-500 hover:text-black' href={'/techPro/about'}>About us</Link>
                 <Link className='px-8 text-gray-500 hover:text-black' href={'/techPro/services'}>Services</Link>
             </div>
-            <Link className='text-xl px-4 py-2 rounded-md font-semibold text-white bg-black' href={'#'}>Get TechPro</Link>
+            <Link className='text-xl px-4 py-2 hidden md:block rounded-md font-semibold text-white bg-black' href={'#'}>Get TechPro</Link>
+            <div className='md:hidden block'>
+                <BiMenu />
+            </div>
         </nav>
     )
 }

@@ -4,23 +4,23 @@ import { Logo } from "./Navbar"
  const Footer = () => {
     return (
       <div>
-        <div className='bg-consulyText text-white rounded-md p-24'>
-          <div className='w-1/2 mx-auto items-center flex flex-col gap-10'>
-            <p className='text-5xl font-semibold text-center'>We are ready to assist you! connect with us today.</p>
+        <div className='bg-consulyText text-white rounded-md p-4 md:p-24'>
+          <div className='md:w-1/2 mx-auto items-center flex flex-col gap-4 md:gap-10'>
+            <p className='md:text-5xl text-2xl font-semibold text-center'>We are ready to assist you! connect with us today.</p>
             <p className='text-lg text-center'>The mockups will be used to visually communicate to features and functionality of the software.</p>
             <div>
               <Link className='px-4 py-2 rounded-md text-black bg-white' href={'#'} >Get Free Consultation</Link>
             </div>
           </div>
         </div>
-        <div className='container mx-auto p-10 flex'>
-          <div className=' px-10 space-y-4'>
+        <div className='container mx-auto p-4 md:p-10 flex-col md:flex-row flex'>
+          <div className=' md:px-10 space-y-4'>
             <Logo />
             <p className='text-sm text-gray-500 w-3/4'>We denounce with righteous indignation and dislike  and demoralized.</p>
             <input type="text" className='outline-none w-2/3 p-2 rounded-md border-gray-300 border-[0.4px]' placeholder='name@email.com' />
             <Link className='px-4 py-2 block w-2/3 rounded-md text-white bg-consulyText' href={'#'} >Learn More</Link>
           </div>
-          <div className='flex flex-1 justify-between'>
+          <div className='flex  flex-1 gap-4 py-4 md:py-0 md:gap-0 text-xs md:text-base justify-between'>
             <div className='space-y-3'>
               <p className='font-semibold'>Essential Links</p>
               <p>Home</p>

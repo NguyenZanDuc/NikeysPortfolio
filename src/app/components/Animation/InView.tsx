@@ -2,7 +2,6 @@
 import { motion, useInView } from 'framer-motion'
 import React, { useRef } from 'react'
 
-
 type Props = {
     children: React.ReactNode,
     delay?: number,
@@ -15,54 +14,44 @@ type Props = {
 const InView = ({ children, duration, delay, className, type, style }: Props) => {
     const ref = useRef<HTMLDivElement>(null);
     const isInView = useInView(ref, { once: true, margin: "0px 100px -100px 0px" });
-    const getStyle = (type: "UP" | "DOWN" | "LEFT" | "RIGHT" | "FADE"|undefined) => {
+
+    const temp = {
+        opacity: isInView ? 1 : 0,
+        transition: `all ${duration || '0.5'}s cubic-bezier(.05,.67,.44,.97)`,
+        transitionDelay: `${delay}s`,
+        ...style
+    }
+    
+    const getStyle = (type: "UP" | "DOWN" | "LEFT" | "RIGHT" | "FADE" | undefined) => {
         switch (type) {
             case "UP":
                 return {
                     y: isInView ? 0 : 200,
-                    opacity: isInView ? 1 : 0,
-                    transition: "all 0.9s cubic-bezier(.05,.67,.44,.97)",
-                    transitionDelay: `${delay}s`,
-                    ...style
+                    ...temp
                 }
             case "DOWN":
                 return {
                     y: isInView ? 0 : -200,
-                    opacity: isInView ? 1 : 0,
-                    transition: "all 0.5s cubic-bezier(.05,.67,.44,.97)",
-                    transitionDelay: `${delay}s`,
-                    ...style
+                    ...temp
                 }
             case "LEFT":
                 return {
                     x: isInView ? 0 : 200,
-                    opacity: isInView ? 1 : 0,
-                    transition: "all 0.5s cubic-bezier(.05,.67,.44,.97)",
-                    transitionDelay: `${delay}s`,
-                    ...style
+                    ...temp
                 }
             case "RIGHT":
                 return {
                     x: isInView ? 0 : -200,
-                    opacity: isInView ? 1 : 0,
-                    transition: "all 0.5s cubic-bezier(.05,.67,.44,.97)",
-                    transitionDelay: `${delay}s`,
-                    ...style
+                    ...temp
                 }
             case "FADE":
                 return {
-                    opacity: isInView ? 1 : 0,
-                    transition: "all 0.5s cubic-bezier(.05,.67,.44,.97)",
-                    transitionDelay: `${delay}s`,
-                    ...style
+                    ...temp
                 }
             default:
                 return {
                     y: isInView ? 0 : 50,
-                    opacity: isInView ? 1 : 0,
-                    transition: "all 0.5s cubic-bezier(.05,.67,.44,.97)",
-                    transitionDelay: `${delay}s`,
-                    ...style
+                    ...temp
                 }
         }
     }

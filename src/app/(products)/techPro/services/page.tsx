@@ -18,12 +18,12 @@ const page = (props: Props) => {
 export default page
 const Hero = () => {
     return (
-        <div className='p-32 flex-col text-xl bg-[#E4F1FF] flex justify-center items-center gap-10'>
+        <div className='md:p-32 p-4 flex-col md:text-xl bg-[#E4F1FF] flex justify-center items-center gap-4 md:gap-10'>
             <InView className='font-semibold'>About our company</InView>
-            <InView delay={0.2} className='font-semibold text-center text-6xl'>
+            <InView delay={0.2} className='font-semibold text-center text-2xl md:text-6xl'>
                 Our Services
             </InView>
-            <InView delay={0.4} className='text-center w-1/2 text-gray-600'>
+            <InView delay={0.4} className='text-center md:w-1/2 text-gray-600'>
                 Our team of experts who have been in the profession for years focuses on helping you achieve optimal technical surface.
             </InView>
         </div>
@@ -56,10 +56,10 @@ const Content = () => {
         description: "Lorem ipsum dolor sit amet consectetur. Vitae eget feugiat nulla egestas. Proin egestas habitasse a sem vel dapibus nulla."
     }]
     return (
-        <div className='p-32 space-y-6'>
+        <div className='md:p-32 p-4 space-y-2 md:space-y-6'>
             <InView className="text-xl">What we provide</InView>
-            <InView delay={0.2} className="flex gap-10">
-                <p className="flex-1 text-4xl font-semibold">We provide the best technical services</p>
+            <InView delay={0.2} className="flex flex-col md:flex-row gap-4 md:gap-10">
+                <p className="flex-1 text-2xl md:text-4xl font-semibold">We provide the best technical services</p>
                 <p className="flex-1 text-gray-500">Nor is there anyone who loves or pursues or desires itself because is pain, but occasionally. home cleaning service options and continue by example.</p>
             </InView>
             <InView type='FADE' delay={0.4} className='grid md:grid-cols-3 grid-cols-1 gap-5 justify-center'>
@@ -89,10 +89,10 @@ const ServiceCard = ({ icon, title, description }: ServiceCardProps) => {
 }
 const FeedBack = () => {
     return(
-        <div className='p-32 space-y-10'>
+        <div className='md:p-32 p-4 space-y-2 md:space-y-10'>
             <div className='space-y-5'>
                 <InView className='text-center'>Testimonials</InView>
-                <InView delay={0.2} className='text-center text-4xl w-1/2 mx-auto font-semibold'>Kind words from customers around the world</InView>
+                <InView delay={0.2} className='text-center md:text-4xl text-2xl md:w-1/2 mx-auto font-semibold'>Kind words from customers around the world</InView>
                 <InView delay={0.4} type='FADE' className='overflow-hidden bg-gray-100'>
                     <Slide duration={40} className=''>
                         <div className='flex min-w-fit gap-10 py-6 '>

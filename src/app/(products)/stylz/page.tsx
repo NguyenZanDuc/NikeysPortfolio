@@ -6,6 +6,7 @@ import React from 'react'
 import Hero from './components/home/Hero'
 import InView from '../Consuly/components/Animation/InView'
 import StylzSalon from './components/StylzSalon'
+import CardContent from './components/Card/CardContent'
 
 type Props = {}
 
@@ -52,7 +53,7 @@ const Content = () => {
                     <CardInstagram image={'https://framerusercontent.com/images/JPSIDRkV8pCv0DvlKnUT714WrE.jpg'} />
                 </div>
             </Slide>
-            <div className='absolute top-0 left-0 h-full w-1/3 bg-gradient-to-r -translate-x-1 from-black to-transparent'></div>
+            <div className='absolute top-0 left-0 h-full w-1/3 bg-gradient-to-r -translate-x-2 from-black to-transparent'></div>
             <div className='absolute top-0 right-0 h-full w-1/3 bg-gradient-to-l translate-x-1 from-black to-transparent'></div>
         </div>
         </div>
@@ -67,33 +68,6 @@ const CardInstagram = ({ image }: { image: string }) => {
                 width={1000}
                 height={1000}
                 style={{ width: "100%", height: "100%", objectFit: "cover" }} />
-        </div>
-    )
-}
-type CardContentProps = {
-    image: string
-    title: string
-    description: string
-    href: string
-    linkText: string,
-    className?: string
-}
-const CardContent = ({ image, title, description, href, linkText, className }: CardContentProps) => {
-    return (
-        <div className={cn("flex md:flex-row flex-col gap-5 h-[600px]", className)}>
-            <InView delay={0.2} className="rounded-2xl flex-1 overflow-hidden">
-                <Image
-                    src={image}
-                    alt={''}
-                    width={1000}
-                    height={1000}
-                    style={{ width: "100%", height: "100%", objectFit: "cover" }} />
-            </InView>
-            <InView delay={0.4} className="rounded-2xl bg-[#1D1D1D] flex  flex-col flex-1 justify-center items-center gap-6">
-                <div className='md:text-5xl text-2xl font-semibold'>{title}</div>
-                <div className='text-sm text-center md:w-1/2 text-gray-300'>{description}</div>
-                <Link href={href} className='font-semibold md:text-base text-xs p-2 inline-block rounded-md border'>{linkText}</Link>
-            </InView>
         </div>
     )
 }

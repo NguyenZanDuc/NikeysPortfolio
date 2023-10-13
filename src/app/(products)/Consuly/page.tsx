@@ -21,13 +21,13 @@ export default page
 const Hero = () => {
   return (
 
-    <div className='container z-10 px-24 relative flex items-center gap-10 mx-auto '>
-      <div className='space-y-10 flex-1 '>
+    <div className='container z-10 md:px-24 p-4 relative flex flex-col md:flex-row items-center gap-10 mx-auto '>
+      <div className='md:space-y-10 space-y-4 flex-1 '>
         <InView>
           <p className='p-2 rounded-full inline text-consulyText bg-consulyContent text-lg '>Customer Focus Solution</p>
         </InView>
         <InView delay={0.3}>
-          <p className='text-6xl font-semibold '>Guidance Extends Past Advice</p>
+          <p className='md:text-6xl text-2xl font-semibold '>Guidance Extends Past Advice</p>
         </InView>
         <InView delay={0.6}>
           <p className=' text-gray-600 '>Elevate Your Business with Expert Guidance. Unlock Growth Potential. Your Success, Our Mission.</p>
@@ -84,10 +84,10 @@ const Service = () => {
     }
   ]
   return (
-    <div className='px-24 bg-consulyBackground p-10 flex flex-col items-center gap-10'>
+    <div className='md:px-24 p-4 bg-consulyBackground md:p-10 flex flex-col items-center gap-4 md:gap-10'>
       <p className='p-2 rounded-full inline text-consulyText bg-consulyContent text-lg'>Our Services</p>
-      <p className='w-1/3 font-semibold text-5xl text-center'>Unlocking Your Business Potential</p>
-      <div className='w-full flex gap-10 justify-center flex-wrap'>
+      <p className='md:w-1/3 w-3/4 font-semibold md:text-5xl text-2xl text-center'>Unlocking Your Business Potential</p>
+      <div className='md:w-full flex  gap-10 justify-center flex-wrap'>
         {services.map((service, index) => (
           <InView delay={0.1 * index}  key={index}>
             <CardService {...service} />
@@ -120,17 +120,17 @@ const CardService = ({ title, description, image }: CardServiceProps) => {
 }
 const More = () => {
   return (
-    <div className='container mx-auto flex p-10  items-center'>
-      <div className='flex-1 p-24 overflow-hidden relative'>
-        <p className='p-2 bg-white rounded-md text-sm absolute bottom-1/4 right-14 shadow-lg'>
+    <div className='container mx-auto flex  md:p-10 p-4 flex-col md:flex-row  items-center'>
+      <div className='flex-1 md:p-24 p-4 overflow-hidden relative'>
+        <p className='p-2 bg-white rounded-md text-sm absolute bottom-1/4 right-0 md:right-14 shadow-lg'>
           <span className=' text-consulyText text-xl font-semibold'>12+ </span>
           Years Of Experience
         </p>
         <Image src={'https://framerusercontent.com/images/6OWYXmqlhilNhnikr8Al2FhYUA.png?scale-down-to=1024'} alt={''} width={1000} height={1000} style={{ width: "100%", height: "auto" }} ></Image>
       </div>
-      <div className='flex-1 space-y-10'>
+      <div className='flex-1 md:space-y-10 space-y-4'>
         <InView delay={0.1}>
-          <p className='text-6xl font-semibold'>Reliable & <span className='text-consulyText'>cost efficient</span> consultancy </p>
+          <p className='md:text-6xl text-2xl font-semibold'>Reliable & <span className='text-consulyText'>cost efficient</span> consultancy </p>
         </InView>
         <InView delay={0.2}>
           <p className='text-xm text-gray-500'>Consuly is your trusted advisors in business excellence. With a passion for innovation and a commitment to results, we provide tailored solutions to help businesses thrive. Our experienced team is dedicated to your success, guiding you through challenges and opportunities in today is dynamic landscape.</p>
@@ -162,9 +162,9 @@ const CaseStudies = () => {
   }
   ]
   return (
-    <div className='bg-consulyBackground p-10 flex flex-col items-center gap-10 justify-center'>
+    <div className='bg-consulyBackground md:p-10 p-4 flex flex-col items-center md:gap-10 gap-4 justify-center'>
       <p className='p-2 rounded-full inline text-consulyText bg-consulyContent text-lg'>Case Studies</p>
-      <p className='w-1/4 text-5xl text-center'>Discover our case history</p>
+      <p className='md:w-1/4 md:text-5xl text-2xl text-center'>Discover our case history</p>
       <div className='w-full flex gap-6 justify-center flex-wrap'>
         {caseStudies.map((caseStudy, index) => (
           <InView delay={0.1 * index} key={index}>
@@ -215,10 +215,10 @@ const Blog = () => {
     image: "https://framerusercontent.com/images/iwHZntXPxelX1edy5gO9SJ1UPM.jpg?scale-down-to=512"
   }]
   return (
-    <div className='container mx-auto flex flex-col items-center py-10 space-y-10'>
-      <p className='p-2 rounded-full inline text-consulyText bg-consulyContent text-lg'>Case Studies</p>
-      <p className='w-1/4 text-5xl text-center'>Lastest News</p>
-      <div className=' gap-6 grid grid-cols-4 grid-rows-3 px-32'>
+    <div className='container mx-auto flex flex-col items-center py-10 md:space-y-10 space-y-4'>
+      <p className='p-2 rounded-full inline text-consulyText bg-consulyContent text-lg'>Blogs</p>
+      <p className='md:w-1/4 text-2xl md:text-5xl text-center'>Lastest News</p>
+      <div className=' gap-6 grid md:grid-cols-4 md:grid-rows-3 px-4 md:px-32'>
         <CardBlog delay={0.1}  className=' col-span-2 row-span-3 flex-col rounded-xl overflow-hidden  shadow-md' title={blogs[0].title} date={blogs[0].date} description={blogs[0].description} image={blogs[0].image} />
         <CardBlog delay={0.2} className='flex gap-3 col-span-2 row-span-1 first:basis-1/3 ' title={blogs[1].title} date={blogs[1].date} description={blogs[1].description} image={blogs[1].image} />
         <CardBlog delay={0.3} className='flex gap-3 col-span-2 row-span-1 first:basis-1/3 ' title={blogs[2].title} date={blogs[2].date} description={blogs[2].description} image={blogs[2].image} />

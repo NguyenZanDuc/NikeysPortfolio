@@ -6,7 +6,7 @@ type Props = {}
 
 const page = (props: Props) => {
     return (
-        <div className='bg-[#FCF9ED] min-w-fit'>
+        <div className='bg-[#FCF9ED] '>
             <Hero />
             <Content />
             <Detail />
@@ -18,11 +18,11 @@ export default page
 
 const Hero = () => {
     return (
-        <div className='bg-vibleBackground text-white p-32 flex flex-col justify-center items-center gap-10'>
-            <InView className='text-6xl font-semibold'>
+        <div className='bg-vibleBackground text-white md:p-32 p-4 flex flex-col justify-center items-center md:gap-10 gap-4'>
+            <InView className='md:text-6xl text-2xl font-semibold'>
                 About
             </InView>
-            <InView delay={0.2} className='w-1/2 text-center'>
+            <InView delay={0.2} className='md:w-1/2 text-center'>
                 Learn the story behind our pottery studio, our passion for the art form, and the vision that drives us to inspire creativity in every artist who walks through our doors.
             </InView>
         </div>
@@ -30,17 +30,17 @@ const Hero = () => {
 }
 const Content = () => {
     return (
-        <div className='flex p-28 gap-5 text-gray-700 text-xl'>
+        <div className='flex md:md:p-28 p-4 p-4 flex-col md:flex-row gap-5 text-gray-700 text-xl'>
             <div className='flex-1 flex justify-center flex-col gap-5'>
-                <p className='w-3/4'>At our pottery studio, we believe in fostering a sense of community and collaboration among artists. We understand the power of connection and support in the creative process, which is why we have built a vibrant community of like-minded individuals.</p>
+                <p className='md:w-3/4'>At our pottery studio, we believe in fostering a sense of community and collaboration among artists. We understand the power of connection and support in the creative process, which is why we have built a vibrant community of like-minded individuals.</p>
                 <Image src='https://framerusercontent.com/images/szIgBGNSqhY1W2YBOtnLOcfxOCw.jpg' width={1000} height={1000} alt={''} style={{ width: "100%", height: "auto", borderRadius: 10 }} />
                 <Image src='https://framerusercontent.com/images/oelyjBjFIuZHSoa6OYkSku2CstE.jpg' width={1000} height={1000} alt={''} style={{ width: "100%", height: "auto", borderRadius: 10 }} />
             </div>
             <div className='flex-1 flex justify-center flex-col gap-5'>
                 <Image src='https://framerusercontent.com/images/Ijdr8D307qPs0b6hClEQrKdVqA.jpg' width={1000} height={1000} alt={''} style={{ width: "100%", height: "auto", borderRadius: 10 }} />
                 <Image src='https://framerusercontent.com/images/RZK4pATmlR78lcJebKj8OblAI.jpg' width={1000} height={1000} alt={''} style={{ width: "100%", height: "auto", borderRadius: 10 }} />
-                <p className='w-3/4'>Our studio serves as a hub for sharing ideas, exchanging techniques, and finding inspiration. It is not just a place to create pottery; it is a place to connect with fellow artists who share your passion. In addition to our regular classes and workshops, we host events, exhibitions, and social gatherings to encourage interaction and networking.</p>
-                <p className='w-3/4'>Whether you are seeking to expand your artistic horizons, find your artistic voice, or simply surround yourself with fellow art enthusiasts, our pottery studio is the perfect place to nurture your creativity and form lasting connections.</p>
+                <p className='md:w-3/4'>Our studio serves as a hub for sharing ideas, exchanging techniques, and finding inspiration. It is not just a place to create pottery; it is a place to connect with fellow artists who share your passion. In addition to our regular classes and workshops, we host events, exhibitions, and social gatherings to encourage interaction and networking.</p>
+                <p className='md:w-3/4'>Whether you are seeking to expand your artistic horizons, find your artistic voice, or simply surround yourself with fellow art enthusiasts, our pottery studio is the perfect place to nurture your creativity and form lasting connections.</p>
             </div>
         </div>
     )
@@ -81,30 +81,30 @@ const Detail = () => {
     },
     ]
     return (
-        <div className='p-28 space-y-32'>
-            <div className='py-32 flex flex-wrap justify-between gap-10'>
+        <div className='md:p-28 p-8 space-y-4 md:space-y-32'>
+            <div className='md:py-32 py-4 flex flex-wrap justify-between gap-4 md:gap-10'>
                 {cards.map((card, index) => (
                     <InView key={index} delay={index * 0.2}>
                         <CardMember {...card} />
                     </InView>
                 ))}
             </div>
-            <div className='p-28 flex divide-x justify-between text-xl bg-gray-400 rounded-md'>
-                    <div className='px-8 space-y-2'>
-                        <p className='font-semibold text-4xl'>30+</p>
-                        <p>Years of experience</p>
+            <div className='md:p-28 p-4 flex  md:divide-x text-center justify-between text-xl bg-gray-400 rounded-md'>
+                    <div className='md:px-8 md:space-y-2'>
+                        <p className='font-semibold text-2xl md:text-4xl'>30+</p>
+                        <p className='text-xs '>Years of experience</p>
                     </div>
-                    <div className='px-8 space-y-2'>
-                        <p className='font-semibold text-4xl'>2076</p>
-                        <p>Satisfied customers</p>
+                    <div className='md:px-8 md:space-y-2'>
+                        <p className='font-semibold text-2xl md:text-4xl'>2076</p>
+                        <p className='text-xs '>Satisfied customers</p>
                     </div>
-                    <div className='px-8 space-y-2'>
-                        <p className='font-semibold text-4xl'>158</p>
-                        <p>Pots broken</p>
+                    <div className='md:px-8 md:space-y-2'>
+                        <p className='font-semibold text-2xl md:text-4xl'>158</p>
+                        <p className='text-xs '>Pots broken</p>
                     </div>
-                    <div className='px-8 space-y-2'>
-                        <p className='font-semibold text-4xl'>47</p>
-                        <p>Exhibitions held</p>
+                    <div className='md:px-8 md:space-y-2'>
+                        <p className='font-semibold text-2xl md:text-4xl'>47</p>
+                        <p className='text-xs '>Exhibitions held</p>
                     </div>
             </div>
         </div>
@@ -119,7 +119,7 @@ type CardMemberProps = {
 }
 const CardMember = ({ image, name, role }: CardMemberProps) => {
     return (
-        <div className='space-y-3 w-[200px] text-center'>
+        <div className='space-y-3 md:w-[240px] w-[120px] text-center'>
             <div className='w-full aspect-square rounded-full overflow-hidden shadow-md '>
                 <Image src={image} width={1000} height={1000} alt={''} style={{ width: "100%", height: "100%", borderRadius: 10, objectFit:"cover" }} />
             </div>

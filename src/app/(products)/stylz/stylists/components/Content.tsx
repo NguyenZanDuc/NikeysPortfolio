@@ -10,6 +10,7 @@ type Props = {}
 
 const Content = (props: Props) => {
     const [numberSelected, setNumberSelected] = useState(0);
+    
     const members = [
         {
             image: 'https://framerusercontent.com/images/FhQ2ArEmqDkKoGUqsEk4gk0j510.jpg?scale-down-to=512',
@@ -54,44 +55,44 @@ const Content = (props: Props) => {
             description: "Meet John, our skilled technician. With a passion for hair and a commitment to excellence, he specializes in crafting beautiful and personalized looks. Trust John to enhance your style and leave you feeling confident and refreshed.",
         }
     ]
-  return (
-    <div>
-        <div className='md:p-32 p-4 md:space-y-8 space-y-4'>
-        <InView className='md:text-6xl text-2xl text-center font-bold'>Meet Our Team</InView>
-        <InView delay={0.2} className='text-xl md:w-1/2 mx-auto text-center text-gray-400'>Discover our hair salon is exquisite services, from precision cuts to stunning color transformations. Elevate your style with the expertise of our skilled stylists.</InView>
-        </div>
-        <div className='relative flex flex-row gap-10 justify-center md:p-20'>
-        {/* content */}
-        <div className='md:flex-1 w-0'>
-            <InView delay={0.4} className='w-screen md:w-full mx-auto px-6 pt-24 bg-black z-40 sticky md:top-1/4  top-0 md:left-20 aspect-square rounded-xl overflow-hidden'>
-                <Image
-                    src={members[numberSelected].image}
-                    alt={''}
-                    width={1000}
-                    height={1000}
-                    className='rounded-xl'
-                    style={{
-                        width: "100%",
-                        borderRadius: "12px",
-                        height: "100%", objectFit: "cover"
-                    }} />
-            </InView>
-        </div>
-        <InView delay={1} className='flex-1 py-[550px]  md:px-10 '>
-            {members.map((member, index) => (
-                <CardMember
-                key={index}
-                onSelected={setNumberSelected}
-                index={index}
-                name={member.name}
-                role={member.role}
-                description={member.description} />
-            ))}
-        </InView>
-        </div>
-    </div>
 
-  )
+    return (
+        <div>
+            <div className='md:p-32 p-4 md:space-y-8 space-y-4'>
+                <InView className='md:text-6xl text-2xl text-center font-bold'>Meet Our Team</InView>
+                <InView delay={0.2} className='text-xl md:w-1/2 mx-auto text-center text-gray-400'>Discover our hair salon is exquisite services, from precision cuts to stunning color transformations. Elevate your style with the expertise of our skilled stylists.</InView>
+            </div>
+            <div className='relative flex flex-row gap-10 justify-center md:p-20'>
+                <div className='md:flex-1 w-0'>
+                    <InView delay={0.4} className='w-screen md:w-full mx-auto px-6 pt-24 bg-black z-40 sticky md:top-1/4  top-0 md:left-20 aspect-square rounded-xl overflow-hidden'>
+                        <Image
+                            src={members[numberSelected].image}
+                            alt={''}
+                            width={1000}
+                            height={1000}
+                            className='rounded-xl'
+                            style={{
+                                width: "100%",
+                                borderRadius: "12px",
+                                height: "100%", objectFit: "cover"
+                            }} />
+                    </InView>
+                </div>
+                <InView delay={1} className='flex-1 py-[550px]  md:px-10 '>
+                    {members.map((member, index) => (
+                        <CardMember
+                            key={index}
+                            onSelected={setNumberSelected}
+                            index={index}
+                            name={member.name}
+                            role={member.role}
+                            description={member.description} />
+                    ))}
+                </InView>
+            </div>
+        </div>
+
+    )
 }
 
 export default Content

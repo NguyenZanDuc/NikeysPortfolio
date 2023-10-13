@@ -22,6 +22,7 @@ const  Slide = ({ children, duration, repeatType, directionLeft, className, ease
       }
 
     }, []);
+    
     return (
        <motion.div 
                 ref={ref}
