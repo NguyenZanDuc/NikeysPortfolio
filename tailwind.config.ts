@@ -10,6 +10,9 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        axels: '#B3986B',
+        axelsBackground: '#FAF9F7',
+
         techPro:"#F84B04",
         techProBackground:"#101010",
 
