@@ -14,3 +14,14 @@ model User {
   email String  @unique
   name  String?
 }
+
+// Axels schema
+model AxelsProduct{
+  id    String  @id @default(auto()) @map("_id") @db.ObjectId
+  title String
+  price Float
+  description String?
+  category String
+  image String
+  tags String[]
+}

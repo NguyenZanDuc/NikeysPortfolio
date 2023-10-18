@@ -10,6 +10,9 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        calmHome: "#CE9F77",
+        calmHomeBackground: "#F3F0EB",
+
         axels: '#B3986B',
         axelsBackground: '#FAF9F7',
 
