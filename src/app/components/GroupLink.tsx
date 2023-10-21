@@ -17,6 +17,7 @@ const GroupLink = (props: Props) => {
                 <Link className='bg-gradient-to-tr hover:scale-125 duration-300 from-gray-50 to-slate-500 bg-clip-text text-transparent ' href='/stylz'>STYLZ</Link>
                 <Link className='bg-gradient-to-tr hover:scale-125 duration-300 from-gray-50 to-slate-500 bg-clip-text text-transparent ' href='/axels'>Axels</Link>
                 <Link className='bg-gradient-to-tr hover:scale-125 duration-300 from-gray-50 to-slate-500 bg-clip-text text-transparent ' href='/calmHome'>CalmHome</Link>
+                <Link className='bg-gradient-to-tr hover:scale-125 duration-300 from-gray-50 to-slate-500 bg-clip-text text-transparent ' href='/spendly'>Spendly</Link>
         </div>
     )
 }

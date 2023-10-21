@@ -10,6 +10,9 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        spendly:"#2B9D80",
+        spendlyText:"#CE66FE",
+
         calmHome: "#CE9F77",
         calmHomeBackground: "#F3F0EB",
 
