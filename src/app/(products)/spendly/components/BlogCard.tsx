@@ -12,7 +12,7 @@ type Props = {
 
 const BlogCard = (props: Props) => {
   return (
-    <div className='p-10 rounded-xl min-w-[360px] shadow-md space-y-4 '>
+    <div className='p-10 rounded-xl min-w-[300px] sm:min-w-[360px] shadow-md space-y-4 '>
         <div className='w-full relative aspect-square rounded-xl overflow-hidden'>
             <Image src={props.image} alt={props.title} fill objectFit='cover'/>
         </div>
