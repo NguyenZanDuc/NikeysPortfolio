@@ -11,7 +11,7 @@ type Props = {
 const TransactionCard = (props: Props) => {
     const isUp = props.number > 0
   return (
-    <div className='flex w-[400px] rounded-xl p-4 shadow-xl gap-2 items-center'>
+    <div className='flex sm:w-[400px] rounded-xl p-4 shadow-xl gap-2 items-center'>
         <div className='p-2 rounded-full bg-slate-200 flex justify-center items-center text-black'>
             {isUp ? <BiUpArrowAlt className="w-10 h-10"/> : <BiDownArrowAlt className="w-10 h-10"/>}
         </div>

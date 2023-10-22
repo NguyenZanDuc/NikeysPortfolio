@@ -1,5 +1,4 @@
 "use client"
-
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import * as z from "zod"
@@ -34,7 +33,7 @@ const ContactForm = (props: Props) => {
     console.log(values)
   }
   return (
-    <div className="w-1/3">
+    <div className="w-full">
       <p className="text-spendly">Send Us a Message</p>
       <Form {...form} >
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 p-4">

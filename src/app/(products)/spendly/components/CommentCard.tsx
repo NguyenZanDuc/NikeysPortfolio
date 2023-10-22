@@ -17,7 +17,7 @@ type Props = {
 const CommentCard = (props: Props) => {
 
     return (
-        <div className='w-[400px] h-[340px] space-y-6 rounded-xl shadow-lg p-10 flex flex-col'>
+        <div className='min-[360px] h-[340px] space-y-6 rounded-xl shadow-lg p-10 flex flex-col'>
             <div className='flex gap-1'>
                 {new Array(5).fill(0).map((_, i) => (
                     <BsStarFill key={i} className={i < props.star ? "text-spendlyText" : "text-gray-300"} />

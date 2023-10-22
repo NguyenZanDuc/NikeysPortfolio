@@ -7,13 +7,17 @@ import { MdOutlineCancel } from 'react-icons/md'
 type Props = {
     data:{
         title: string,
-        features: string[]
+        features: Features[]
     }[]
 }
-
+export enum  Features {
+    free = 'free',
+    pro = 'pro',
+    premium = 'premium'
+}
 const PricingTable = (props: Props) => {
     return (
-        <div className='w-1/2'>
+        <div className='w-full'>
             <Table >
                 <TableHeader>
                     <TableRow className='divide-y-0 '>
@@ -35,15 +39,15 @@ const PricingTable = (props: Props) => {
                 <TableBody className=''>
                     {props.data.map((item, index) => (
                         <TableRow key={index}>
-                            <TableCell className='flex justify-center'>{item.title}</TableCell>
+                            <TableCell className='flex sm:justify-center'>{item.title}</TableCell>
                             <TableCell className='px-4'>
-                                {item.features.includes('free') ? <AiFillCheckCircle className="text-green-500" /> : <MdOutlineCancel className="text-red-500" />}
+                                {item.features.includes(Features.free) ? <AiFillCheckCircle className="text-green-500" /> : <MdOutlineCancel className="text-red-500" />}
                             </TableCell>
                             <TableCell className='px-4'>
-                                {item.features.includes('pro') ? <AiFillCheckCircle className="text-green-500" /> : <MdOutlineCancel className="text-red-500" />}
+                                {item.features.includes(Features.pro) ? <AiFillCheckCircle className="text-green-500" /> : <MdOutlineCancel className="text-red-500" />}
                             </TableCell>
                             <TableCell className='px-4'>
-                                {item.features.includes('premium') ? <AiFillCheckCircle className="text-green-500" /> : <MdOutlineCancel className="text-red-500" />}
+                                {item.features.includes(Features.premium) ? <AiFillCheckCircle className="text-green-500" /> : <MdOutlineCancel className="text-red-500" />}
                             </TableCell>
                         </TableRow>
                     ))}
