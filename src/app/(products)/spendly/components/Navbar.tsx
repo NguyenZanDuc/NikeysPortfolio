@@ -16,7 +16,7 @@ type Props = {}
 const Navbar = (props: Props) => {
   const [open, setOpen] = React.useState(false)
   const [preProgress, setPreProgress] = React.useState(0)
-  const [isScrollUp, setIsScrollUp] = React.useState(false)
+  const [isScrollUp, setIsScrollUp] = React.useState(true)
   const {scrollYProgress} = useScroll()
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
     if (scrollYProgress.get() < preProgress) {
