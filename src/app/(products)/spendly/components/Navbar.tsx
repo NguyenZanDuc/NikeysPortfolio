@@ -1,3 +1,4 @@
+"use client"
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
@@ -8,12 +9,37 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/app/components/UI/DropdownMenu"
+import { motion, useMotionValueEvent, useScroll } from 'framer-motion'
 
 type Props = {}
 
 const Navbar = (props: Props) => {
+  const [open, setOpen] = React.useState(false)
+  const [preProgress, setPreProgress] = React.useState(0)
+  const [isScrollUp, setIsScrollUp] = React.useState(false)
+  const {scrollYProgress} = useScroll()
+  useMotionValueEvent(scrollYProgress, "change", (latest) => {
+    if (scrollYProgress.get() < preProgress) {
+      setIsScrollUp(true)
+    } else {
+      setIsScrollUp(false)
+    }
+    setPreProgress(scrollYProgress.get())
+    console.log(isScrollUp)
+  })
+  const handleOpenChange = (nextOpen: boolean) => {
+    setOpen(nextOpen)
+  }
+  const handleClick = () => {
+    setOpen(!open)
+  }
   return (
-    <div className='flex items-center justify-between sm:px-32 p-4 sm:py-4 border-b-[0.1px] border-gray-200 '>
+    <motion.div
+    style={{
+      y: isScrollUp ? 0 : -100,
+      transition: "all 0.5s ease"
+    }}
+     className='flex fixed top-0 left-0 w-screen bg-white z-50 items-center justify-between sm:px-32 p-4 sm:py-4 border-b-[0.1px] border-gray-200 '>
       <div className="flex basis-1/6 gap-1 items-center justify-center">
         <Logo />
         <p className='font-bold hidden sm:block'>spendly</p>
@@ -28,28 +54,28 @@ const Navbar = (props: Props) => {
         <Link href={'#'} className='py-2 px-4 rounded-full bg-spendly text-white font-semibold' >Buy Template</Link>
       </div>
       <div className='flex sm:hidden items-center justify-center'>
-        <DropdownMenu>
+        <DropdownMenu open={open} onOpenChange={handleOpenChange}>
           <DropdownMenuTrigger>
             <BiMenu className="w-8 h-8" />
           </DropdownMenuTrigger>
           <DropdownMenuContent>
             <DropdownMenuItem>
-              <Link href={'/spendly/features'} className='px-4 py-2 rounded-full border border-transparent' >Features</Link>
+              <Link onClick={handleClick} href={'/spendly/features'} className='px-4 py-2 rounded-full border border-transparent' >Features</Link>
             </DropdownMenuItem>
             <DropdownMenuItem>
-              <Link href={'/spendly/pricing'} className='px-4 py-2 rounded-full border border-transparent ' >Pricing</Link>
+              <Link onClick={handleClick}  href={'/spendly/pricing'} className='px-4 py-2 rounded-full border border-transparent ' >Pricing</Link>
             </DropdownMenuItem>
             <DropdownMenuItem>
-              <Link href={'/spendly/blog'} className='px-4 py-2 rounded-full border border-transparent ' >Blog</Link>
+              <Link onClick={handleClick}  href={'/spendly/blog'} className='px-4 py-2 rounded-full border border-transparent ' >Blog</Link>
             </DropdownMenuItem>
             <DropdownMenuItem>
-              <Link href={'/spendly/contact'} className='px-4 py-2 rounded-full border border-transparent' >Contact</Link>
+              <Link onClick={handleClick}  href={'/spendly/contact'} className='px-4 py-2 rounded-full border border-transparent' >Contact</Link>
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
 
       </div>
-    </div>
+    </motion.div>
   )
 }
 

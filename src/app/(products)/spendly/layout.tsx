@@ -15,7 +15,7 @@ export default function Layout({
   children: React.ReactNode
 }) {
   return (
-   <div className='w-screen overflow-hidden'>
+   <div className='w-screen overflow-hidden pt-20'>
         <Navbar />
         {children}
         <Footer />
